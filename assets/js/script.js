@@ -1,5 +1,5 @@
 var highlightsApi = 'https://www.scorebat.com/video-api/v3/';
-var standingsApi = 'https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2020&sort=asc&per_page=5';
+var standingsApi = 'https://api-football-standings.azharimm.site/leagues';
 
 fetch(highlightsApi)
   .then(function (response) {
