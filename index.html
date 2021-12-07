@@ -1,89 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Football Fan Central</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <section class="hero has-text-white">
-        <div class="hero-body">
-          <p class="title center">
-            <img src="./assets/images/soccerBall.png" width="85" height="85" />
-            <a class="football-title"
-              href="https://cheesecakeassassin.github.io/group5-football-fanpage/"
-              >Football Fan Central
-            </a>
-            <img src="./assets/images/soccerBall.png" width="85" height="85" />
-          </p>
-          <p class="subtitle">
-            <div class="navbar">
-              <p>Highlights</p>
-              <p>Standings</p>
-            </div>
-          </p>
-        </div>
-      </section>
 
-      <section class="highlights">
-        <div class="columns">
-          <div class="column is-one-thrid">
-            First column
-          </div>
-          <div class="column is-one-thrid">
-            Second column
-          </div>
-          <div class="column is-one-thrid">
-            Third column
-          </div>
-          <div class="column is-one-thrid">
-            Fourth column
-          </div>
-          <div class="column is-one-thrid">
-            Fifth column
-          </div>
-          <div class="column is-one-thrid">
-            Sixth column
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Fan Central</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+</head>
+
+<body>
+  <header>
+    <section class="hero has-text-white">
+      <div class="hero-body">
+        <p class="title center">
+          
+          <img src="./assets/images/soccerBall.png" width="85" height="85" />
+          <a class="football-title" href="https://cheesecakeassassin.github.io/group5-football-fanpage/">Football Fan
+            Central
+          </a>
+          <img src="./assets/images/soccerBall.png" width="85" height="85" />
+          
+        </p>
+        <div class="euro1"><img src="./assets/images/euro1.jpeg" width="300" height="120" /></div>
+        <p class="subtitle">
+        <div class="navbar">
+          <p>Highlights</p>
+          <p>Standings</p>
         </div>
-      </section>
-      <!-- <iframe
-        src="https://www.scorebat.com/embed/"
-        frameborder="0"
-        width="600"
-        height="760"
-        allowfullscreen
-        allow="autoplay; fullscreen"
-        style="width: 600px; height: 760px; overflow: hidden; display: block"
-        class="_scorebatEmbeddedPlayer_"
-      ></iframe> -->
-      <script>
-        (function (d, s, id) {
-          var js,
-            fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://www.scorebat.com/embed/embed.js?v=arrv";
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, "script", "scorebat-jssdk");
-      </script>
-    </header>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Hello World</h1>
-        <p class="subtitle">My first website with <strong>Bulma</strong>!</p>
-        <button class="button is-success">Success</button>
+        </p>
       </div>
     </section>
-    <footer></footer>
-    <script src="assets/js/script.js"></script>
-  </body>
+  </header>
+  <!--buttons-->
+  <br><br>
+  <div class=" select is-rounded is-large is-black col-md-4" >
+    <select id= ""class="company">
+          <option value=''><strong>select league</strong></option>
+          
+    </select>
+</div>
+<div class="select is-rounded is-large is-black col-md-4" >
+    <select class="product">
+          <option value=''><strong>select year</strong></option>
+    </select>
+</div>
+<br><br>
+  <!--buttons-->
+ 
+
+   <div class="columns is-multiline is-mobile">
+    <div class="column is-one-third">
+      <iframe src="https://www.scorebat.com/embed/" frameborder="0" width="600" height="760" 
+      allow="autoplay; fullscreen" style="width: 400px; height: 400px; overflow: hidden; display: block"
+      class="_scorebatEmbeddedPlayer_"></iframe>
+    
+    </div>
+    
+  </div>
+
+<!--buttons-->
+<br><br>
+<div class=" select is-rounded is-large is-black col-md-4" >
+  <select  id="" class="company">
+        <option value=''><strong>select league</strong></option>
+  </select>
+</div>
+<div class="select is-rounded is-large is-black col-md-4" >
+  <select class="product">
+        <option value=''><strong>select year</strong></option>
+  </select>
+</div>
+<br><br>
+<!--buttons-->
+  <ol></ol>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="Position">Pos</abbr></th>
+        <th>Team</th>
+        <th><abbr title="Played">Pld</abbr></th>
+        <th><abbr title="Won">W</abbr></th>
+        <th><abbr title="Drawn">D</abbr></th>
+        <th><abbr title="Lost">L</abbr></th>
+        <th><abbr title="Goals for">GF</abbr></th>
+        <th><abbr title="Goals against">GA</abbr></th>
+        <th><abbr title="Goal difference">GD</abbr></th>
+        <th><abbr title="Points">Pts</abbr></th>
+        <th>Qualification or relegation</th>
+      </tr>
+      
+    </thead>
+    <tr class="one"></tr>
+    <tfoot>
+      <tr>
+        <th><abbr title="Position">Pos</abbr></th>
+        <th>Team</th>
+        <th><abbr title="Played">Pld</abbr></th>
+        <th><abbr title="Won">W</abbr></th>
+        <th><abbr title="Drawn">D</abbr></th>
+        <th><abbr title="Lost">L</abbr></th>
+        <th><abbr title="Goals for">GF</abbr></th>
+        <th><abbr title="Goals against">GA</abbr></th>
+        <th><abbr title="Goal difference">GD</abbr></th>
+        <th><abbr title="Points">Pts</abbr></th>
+        <th>Qualification or relegation</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      
+      <!--<tr>
+        <th>1</th>
+        
+        <td><a class="one" href="" title=""></a> <strong>(C)</strong>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>-->
+      
+      
+  </table>
+  </section>
+  <!--footer-->
+  <footer class="footer">
+    <button class="button is-black is-large is-fullwidth">sign up </button>
+    <div class="content has-text-centered">
+      <p>
+        <strong>football fan central </strong> by <a href="https://jgthms.com">group5</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- add touch punch here -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./assets/js/script.js"></script>
+
+
+  "></script>
+
 </html>
