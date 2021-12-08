@@ -9,10 +9,23 @@
     font-size: 150%;
 }
 
+
 .football-title {
     font-size: 215%;
+    color: black;
 }
-
+.euro1{text-align: center;}
 .hero {
-    background-color: black;
+    background-color: rgba(221, 5, 5, 0.767);
+}
+body {background-color: rgb(0, 0, 0);
+
+}
+li {
+    color: rgb(240, 27, 27);
+}
+p{
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    font-weight: bolder;
 }
