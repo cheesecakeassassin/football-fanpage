@@ -1,7 +1,7 @@
 var selectOne = document.querySelector('.one')
 var selectTwo = document.querySelector('#two')
 var selectLeague = document.querySelector("#three")
-
+var selectVid = document.querySelector("#vid")
 var highlightsApi = 'https://www.scorebat.com/video-api/v3/';
 var standingsApi = ' https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2021&sort=asc';
 var leagueApi =' https://api-football-standings.azharimm.site/leagues';
@@ -14,7 +14,7 @@ fetch(highlightsApi)
   })
   .then(function (data) {
     console.log('Highlights \n----------');
-   console.log(data);
+   
 
     // TODO: Loop through the response
     for (var i = 0; i < data.response.length; i++)
@@ -23,8 +23,20 @@ fetch(highlightsApi)
       var listOption2 = document.createElement('option');
       listOption2.textContent = competitions;
       selectTwo.appendChild(listOption2);
+      //////
+      var video = data.response[i].videos[0].embed;
+      var listVideo = document.createElement('div');
+      //console.log(video)
+       /*listVideo.innerHTML=`<video width="320" height="240" controls>
+       <source src="${video}" type="video/mp4">
+       <source src="${video}" type="video/ogg">
+       Your browser does not support the video tag.
+     </video>`;*/
+     listVideo.innerHTML=video;
+       selectVid.appendChild(listVideo);
        
-      //console.log(data.response[i].videos[0].embed);
+
+      console.log(data.response[i].videos[0]);
       
     }
   });
@@ -40,7 +52,7 @@ fetch(highlightsApi)
 
     for (var i = 0; i < data.data.standings.length; i++)
     {
-      console.log (data.data.standings[i])
+      //console.log (data.data.standings[i])
       var standings =data.data.standings[i].team.name;
       var listItem =document.createElement('li');
       listItem.textContent = standings;
@@ -63,7 +75,7 @@ fetch(leagueApi)
     for (var i = 0; i < data.data.length; i++)
     {
 
-      console.log(data.data[i].slug);
+      //console.log(data.data[i].slug);
       
       var leagues =data.data[i].name;
       var listOption =document.createElement('option')
