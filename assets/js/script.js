@@ -1,9 +1,11 @@
-var selectOne = document.querySelector('.one')
-var selectLeague = document.querySelector(".company")
+var selectOne = document.querySelector('.one');
+var firstLeague = document.querySelector('#first-league');
+var secondLeague = document.querySelector('#second-league')
 
 var highlightsApi = 'https://www.scorebat.com/video-api/v3/';
 var standingsApi = ' https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2021&sort=asc';
 var leagueApi =' https://api-football-standings.azharimm.site/leagues';
+var standingsLeagueApi = ' https://api-football-standings.azharimm.site/leagues';
 
 
 
@@ -20,7 +22,6 @@ fetch(highlightsApi)
     {
       //console.log(data.response[i]);
       
-      
       //var listItem =document.createElement('li')
       //listItem.textContent = data.response[i];
       //selectOne.appendChild(listItem);
@@ -35,6 +36,7 @@ fetch(highlightsApi)
   })
   .then(function (data) {
     console.log('Standings \n----------');
+    console.log(data);
     //console.log(data);
     //console.log(data.data.standings);
 
@@ -55,7 +57,6 @@ fetch(leagueApi)
     return response.json();
   })
   .then(function (data) {
-    console.log('Highlights \n----------');
    //console.log(data.data);
 
     // TODO: Loop through the response
@@ -67,10 +68,31 @@ fetch(leagueApi)
       var leagues =data.data[i].name;
       var listOption =document.createElement('option')
       listOption.textContent = leagues;
-       selectLeague.appendChild(listOption);
+       firstLeague.appendChild(listOption);
        
-    
+  
     }
   });
 
+  fetch(standingsLeagueApi)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+   //console.log(data.data);
+
+    // TODO: Loop through the response
+    for (var i = 0; i < data.data.length; i++)
+    {
+
+      console.log(data.data[i].slug);
+      
+      var leagues =data.data[i].name;
+      var listOption =document.createElement('option')
+      listOption.textContent = leagues;
+       secondLeague.appendChild(listOption);
+       
+  
+    }
+  });
   
