@@ -18,14 +18,13 @@ fetch(highlightsApi)
     // TODO: Loop through the response
     for (var i = 0; i < data.response.length; i++)
     {
-      //console.log(data.response[i]);
+      var competitions =data.response[i].competition;
+      var listOption =document.createElement('option')
+      listOption.textContent = competitions;
+      selectOne.appendChild(listOption);
+       
+      console.log(data.response[i].videos[0].embed);
       
-      
-      //var listItem =document.createElement('li')
-      //listItem.textContent = data.response[i];
-      //selectOne.appendChild(listItem);
-    // TODO: Console log each issue's URL and each user's login
-    //console.log(data.response[i].title);
     }
   });
 
