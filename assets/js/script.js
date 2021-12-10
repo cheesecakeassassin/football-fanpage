@@ -75,8 +75,11 @@ fetch(leagueApi)
       }
     }
   });
-
-
+/////////////////////widget
+  var objDiv1 = document.getElementById("widget1");
+  var objDiv2= document.getElementById("widget2");
+  objDiv1.scrollTop = objDiv1.scrollHeight;
+  objDiv2.scrollTop = objDiv2.scrollHeight;
 
   //localStorage
   localStorage.setItem("tech", "JavaScript");
