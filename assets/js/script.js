@@ -17,7 +17,7 @@ fetch(highlightsApi)
    
 
     // TODO: Loop through the response
-    for (var i = 0; i < data.response.length; i++)
+    for (var i = 0; i < 3; i++)
     {
       var competitions = data.response[i].competition;
       var listOption2 = document.createElement('option');
