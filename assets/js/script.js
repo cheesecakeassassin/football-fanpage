@@ -75,3 +75,27 @@ fetch(leagueApi)
       }
     }
   });
+
+
+
+  //localStorage
+  localStorage.setItem("tech", "JavaScript");
+
+  let techStack = localStorage.getItem("tech");
+console.log(techStack);
+
+localStorage.removeItem("tech");
+//To confirm it was removed, try to retrieve it once more:
+
+console.log(localStorage.getItem("tech"));
+//To remove all the data stored in LocalStorage, use the clear() function:
+
+localStorage.clear();
+//The key() function allows us to retrieve the key of an item saved in LocalStorage by its index. The browser creates an integer index for each item added to LocalStorage.
+
+//As we don't generate this index, we should not use the index to retrieve keys directly. However, we can use this function to get all keys stored in LocalStorage:
+
+for (let i = 0; i < localStorage.length; i++) {
+    let storedValue = localStorage.key(i);
+    console.log(`Item at ${i}: ${storedValue}`);
+}
