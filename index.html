@@ -33,6 +33,8 @@
       </div>
     </section>
   </header>
+
+  
   <!--buttons-->
   <br><br>
   <div class=" select is-rounded is-large is-black col-md-4" >
@@ -131,7 +133,67 @@
   </section>
   <!--footer-->
   <footer class="footer">
-    <button class="button is-black is-large is-fullwidth">sign up </button>
+    <div class='container has-text-centered'>
+      <div class='columns is-mobile is-centered'>
+        <div class='column is-4'>
+          <button class="button is-primary"
+                  id='btn'>SIGN UP</button>
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+    
+              <div class='box'>
+                <h1 class='title' 
+                    style='color:green'>
+                  What's your favorite league?</h1>
+                <p class='is-family-monospace'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui atque dolores alias voluptatum animi perferendis vitae distinctio fugit sint, excepturi ullam velit asperiores ratione quo nam magnam omnis impedit aperiam.
+                </p>
+                <div class='buttons'>
+                  <button class='button is-fullwidth'>
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="modal-close is-large" 
+                    aria-label="close">
+              Model
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Bulma does not have JavaScript included,
+      // hence custom JavaScript has to be
+      // written to open or close the modal
+      const modal = 
+            document.querySelector('.modal');
+      const btn = 
+            document.querySelector('#btn')
+      const close = 
+            document.querySelector('.modal-close')
+    
+      btn.addEventListener('click',
+                           function () {
+        modal.style.display = 'block'
+      })
+    
+      close.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+    
+      window.addEventListener('click',
+                              function (event) {
+        if (event.target.className === 
+            'modal-background') {
+          modal.style.display = 'none'
+        }
+      })
+    </script>
     <div class="content has-text-centered">
       <p>
         <strong>football fan central </strong> by <a href="https://jgthms.com">group5</a>. The source code is licensed
