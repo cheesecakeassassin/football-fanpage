@@ -2,10 +2,12 @@ var selectOne = document.querySelector('.one')
 var selectTwo = document.querySelector('#two')
 var selectLeague = document.querySelector("#three")
 var selectVid = document.querySelector("#vid")
+
+var leagueId = 'eng.1'; // The default league shown is the English Premier League
+
 var highlightsApi = 'https://www.scorebat.com/video-api/v3/';
-var standingsApi = ' https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2021&sort=asc';
+var standingsApi = ' https://api-football-standings.azharimm.site/leagues/' + leagueId + '/standings?season=2021&sort=asc';
 var leagueApi =' https://api-football-standings.azharimm.site/leagues';
-var standingsLeagueApi = ' https://api-football-standings.azharimm.site/leagues';
 
 
 
@@ -18,7 +20,7 @@ fetch(highlightsApi)
    
 
     // TODO: Loop through the response
-    for (var i = 0; i < data.response.length; i++)
+    for (var i = 0; i < 3; i++)
     {
       var competitions = data.response[i].competition;
       var listOption2 = document.createElement('option');
@@ -70,7 +72,7 @@ fetch(leagueApi)
     return response.json();
   })
   .then(function (data) {
-   //console.log(data.data);
+   console.log(data.data);
 
     // TODO: Loop through the response
     for (var i = 0; i < data.data.length; i++)
@@ -81,29 +83,7 @@ fetch(leagueApi)
       var leagues =data.data[i].name;
       var listOption =document.createElement('option')
       listOption.textContent = leagues;
-       firstLeague.appendChild(listOption);
-       
-  
-    }
-  });
-
-  fetch(standingsLeagueApi)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-   //console.log(data.data);
-
-    // TODO: Loop through the response
-    for (var i = 0; i < data.data.length; i++)
-    {
-
-      console.log(data.data[i].slug);
-      
-      var leagues =data.data[i].name;
-      var listOption =document.createElement('option')
-      listOption.textContent = leagues;
-       secondLeague.appendChild(listOption);
+       selectLeague.appendChild(listOption);
        
   
     }
