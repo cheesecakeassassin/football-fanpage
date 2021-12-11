@@ -33,9 +33,14 @@
       </div>
     </section>
   </header>
+
+  <div class="columns widget" >
+    <div style="margin-left:20px; overflow-y: scroll; height:400px; width: 500px;" id="widget1" class="scroll1"><iframe src="https://www.scorebat.com/embed/" frameborder="0" width="600" height="760" allowfullscreen allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script></div>
+    <div style="margin-top: 13px; margin-left:50px; overflow-y: scroll; height:400px; width: 800px; "id="widget2" class=" scroll2"><iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script></div>
+  </div>
   <!--buttons-->
-  <br><br>
-  <div class=" select is-rounded is-large is-black col-md-4" >
+  
+  <!--<div class=" select is-rounded is-large is-black col-md-4" >
     <select id= "two"class="company">
           <option value=''><strong>select competiton</strong></option>
           
@@ -46,10 +51,10 @@
           <option value=''><strong>select year</strong></option>
     </select>
 </div>
-<br><br>
+<br><br>-->
   <!--buttons-->
  
-<div id="vid" ></div>
+<!--<div id="vid" ></div>
    <div class="columns is-multiline is-mobile">
     <div id="vid"  class="column is-one-third _scorebatEmbeddedPlayer_" >
       <iframe src="" frameborder="0" width="600" height="760" 
@@ -58,10 +63,10 @@
     
     </div>
     
-  </div>
+  </div>-->
 
 <!--buttons-->
-<br><br>
+
 <div class=" select is-rounded is-large is-black col-md-4" >
   <select  id="three" class="company">
         <option value=''><strong>select league</strong></option>
@@ -131,7 +136,92 @@
   </section>
   <!--footer-->
   <footer class="footer">
-    <button class="button is-black is-large is-fullwidth">sign up </button>
+    <div class='container has-text-centered'>
+      <div class='columns is-mobile is-centered'>
+        <div class='column is-4'>
+          <button class="button is-danger"
+                  id='btn'>CHOOSE YOUR FAVORITE LEAGUE</button>
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+    
+              <div class='box'>
+                <h1 class='title' 
+                    style='color:rgb(0, 0, 0)'>
+                  What's your favorite league?</h1>
+                  <div class='buttons'>
+                    <button class='button is-black  button is-outlined button is-fullwidth'>
+                      English Premier League
+                    </button>
+                  </div>
+                  <div class='buttons'>
+                    <button class=' button is-black button is-outlined button is-fullwidth'>
+                      French League 1 
+                    </button>
+                  </div>
+                  <div class='buttons'>
+                    <button class=' button is-black button is-outlined button is-fullwidth'>
+                      German Bundesliga
+                    </button>
+                  </div>
+                  <div class='buttons'>
+                    <button class=' button is-black button is-outlined button is-fullwidth'>
+                      Italian Serie A 
+                    </button>
+                  </div>
+                  <div class='buttons'>
+                    <button class=' button is-black button is-outlined button is-fullwidth'>
+                     Portuguese Liga 
+                    </button>
+                  </div>
+                  <div class='buttons'>
+                    <button class=' button is-black button is-outlined button is-fullwidth'>
+                      Spanish Primera Division 
+                    </button>
+                  </div>
+                <div class='buttons'>
+                 
+                </div>
+              </div>
+            </div>
+            <button class="modal-close is-large" 
+                    aria-label="close">
+              Model
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Bulma does not have JavaScript included,
+      // hence custom JavaScript has to be
+      // written to open or close the modal
+      const modal = 
+            document.querySelector('.modal');
+      const btn = 
+            document.querySelector('#btn')
+      const close = 
+            document.querySelector('.modal-close')
+    
+      btn.addEventListener('click',
+                           function () {
+        modal.style.display = 'block'
+      })
+    
+      close.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+    
+      window.addEventListener('click',
+                              function (event) {
+        if (event.target.className === 
+            'modal-background') {
+          modal.style.display = 'none'
+        }
+      })
+    </script>
     <div class="content has-text-centered">
       <p>
         <strong>football fan central </strong> by <a href="https://jgthms.com">group5</a>. The source code is licensed
