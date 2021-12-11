@@ -1,28 +1,34 @@
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 150%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 150%;
 }
-
 
 .football-title {
-    font-size: 215%;
-    color: black;
+  font-size: 215%;
+  color: black;
 }
-.euro1{text-align: center;}
+.euro1 {
+  text-align: center;
+}
 .hero {
-    background-color: rgba(221, 5, 5, 0.767);
+  background-color: rgba(221, 5, 5, 0.767);
 }
 body {background-color: rgba(51, 49, 49, 0.356);
 
 }
 li {
-    color: rgb(240, 27, 27);
+  color: rgb(240, 27, 27);
+}
+p {
+  color: rgb(0, 0, 0);
+  font-size: xx-large;
+  font-weight: bolder;
 }
 p{
     color: rgb(0, 0, 0);
