@@ -32,42 +32,42 @@ fetch(highlightsApi)
     }
   });
 
-fetch(standingsApi)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log("Standings \n----------");
-    //console.log(data);
-    //console.log(data.data.standings);
+// fetch(standingsApi)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     console.log("Standings \n----------");
+//     //console.log(data);
+//     //console.log(data.data.standings);
 
-    for (var i = 0; i < data.data.standings.length; i++) {
-      //console.log (data.data.standings[i])
-      var standings = data.data.standings[i].team.name;
-      var listItem = document.createElement("li");
-      listItem.textContent = standings;
-      selectOne.appendChild(listItem);
-      //console.log(data.data.standings[i].team);
-      //console.log(data.data.standings[i].team.name);
-    }
-  });
+//     for (var i = 0; i < data.data.standings.length; i++) {
+//       //console.log (data.data.standings[i])
+//       var standings = data.data.standings[i].team.name;
+//       var listItem = document.createElement("li");
+//       listItem.textContent = standings;
+//       selectOne.appendChild(listItem);
+//       //console.log(data.data.standings[i].team);
+//       //console.log(data.data.standings[i].team.name);
+//     }
+//   });
 
 // selectLeague downdrop
-fetch(leagueApi)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log("Highlights \n----------");
-    //console.log(data.data);
+// fetch(leagueApi)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     console.log("Highlights \n----------");
+//     //console.log(data.data);
 
-    // TODO: Loop through the response
-    for (var i = 0; i < data.data.length; i++) {
-      //console.log(data.data[i].slug);
+//     // TODO: Loop through the response
+//     for (var i = 0; i < data.data.length; i++) {
+//       //console.log(data.data[i].slug);
 
-      var leagues = data.data[i].name;
-      var listOption = document.createElement("option");
-      listOption.textContent = leagues;
-      selectLeague.appendChild(listOption);
-    }
-  });
+//       var leagues = data.data[i].name;
+//       var listOption = document.createElement("option");
+//       listOption.textContent = leagues;
+//       selectLeague.appendChild(listOption);
+//     }
+  // });
