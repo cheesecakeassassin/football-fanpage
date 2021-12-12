@@ -37,9 +37,13 @@ p{
 }
 .widget{
     
-    height:450px;
    
    
+   
+}
+.divp{
+  display: flex;
+  flex-wrap: wrap;
 }
 .scroll1{
    margin-top: 13px;
@@ -50,3 +54,27 @@ p{
     width: 600px;
     overflow:scroll;
 };
+.ball{
+  display: block;
+}
+@media screen and (max-width: 863px) {
+  .ball{
+    display: none;
+  }
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+
+  .football-title {
+    font-size: 130%;
+  }
+  scroll1{
+    margin: auto;
+    overflow-y: scroll;
+    height: 500px;
+    width:1000px;
+  }
+  .divp{
+    
+    margin: auto;
+  }
+
+}
