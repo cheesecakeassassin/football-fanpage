@@ -55,7 +55,7 @@ p {
 }
 
 .ball {
-  display: block;
+  display: inline-block;
 }
 
 footer {
@@ -83,4 +83,7 @@ footer {
   .footer1 {
     font-size: small;
   }
+}
+#table{
+  width: 100%;
 }
