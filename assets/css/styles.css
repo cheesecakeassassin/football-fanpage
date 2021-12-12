@@ -17,8 +17,11 @@
   text-align: center;
 }
 .hero {
-  background-color: rgba(221, 5, 5, 0.767);
+  background-color: rgb(9 120 105 / 77%);
 }
+
+
+
 body {background-color: rgba(51, 49, 49, 0.356);
 
 }
@@ -35,15 +38,13 @@ p{
     font-size: xx-large;
     font-weight: bolder;
 }
-.widget{
-    
-   
-   
-   
-}
+
 .divp{
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  justify-content: space-around;
 }
 .scroll1{
    margin-top: 13px;
@@ -57,24 +58,31 @@ p{
 .ball{
   display: block;
 }
+footer{
+  background-color: rgb(9 120 105 / 77%);
+}
+
+.footer1{
+  font-size: large;
+ 
+}
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 863px) {
   .ball{
     display: none;
   }
-/* MEDIA QUERY FOR TABLETS AND SMALLER */
+
 
   .football-title {
     font-size: 130%;
   }
-  scroll1{
-    margin: auto;
-    overflow-y: scroll;
-    height: 500px;
-    width:1000px;
-  }
+ 
   .divp{
     
     margin: auto;
   }
-
+.footer1{
+  font-size: small;
+ 
+}
 }
