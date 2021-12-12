@@ -119,14 +119,7 @@ fetch(leagueApi)
   objDiv1.scrollTop = objDiv1.scrollHeight;
   objDiv2.scrollTop = objDiv2.scrollHeight;
 //////////////////////////
-  //localStorage
-  //var preferedLeague = {'eng': 'English Premier', 'fra':'Leaguefrance ligue 1','ger': 'German Bundesliga', 'ita' : 'Italian Serie A','por' :'Portuguese Liga','spa': 'Spanish Primera Division'}
-  //var eng = 'English Premier League';
-  //var fra = 'france ligue 1';
-  //var ger = 'German Bundesliga' ;
-  //var ita = 'Italian Serie A';
-  //var por ='Portuguese Liga';
- // var spa = 'Spanish Primera Division'
+  
   var storage = document.querySelector ('.store')
   //localStorage.setItem("eng", "English Premier League");
   var retrievedObject = localStorage.getItem('a');
@@ -138,39 +131,16 @@ fetch(leagueApi)
 
   console.log('retrievedObject: ', JSON.parse(retrievedObject));
   var listPl =document.createElement('button');
+  listPl.className="button is-black is-rounded is-outlined btns";
   listPl.textContent=a;
   storage.appendChild(listPl);
   };
   function myFunction() {
     var listPl =document.createElement('button');
+    listPl.className="button is-black is-rounded is-outlined btns";
     listPl.textContent= retrievedObject;
     storage.appendChild(listPl);
   }
   
   myFunction();
-// Put the object into storage
-//localStorage.setItem('preferedLeague', JSON.stringify(preferedLeague));
 
-  //let setEng= localStorage.setItem("pLeague","a");
-//console.log(pLeague);
-//let getEng= localStorage.getItem("eng");
-//console.log (getEng);
-//var listStorage = document.createElement("P");
-       // listStorage.textContent = eng;
-       // storage.appendChild(listStorage);
-//console.log(getEng);
-////localStorage.removeItem("tech");
-//To confirm it was removed, try to retrieve it once more:
-
-//console.log(localStorage.getItem("tech"));
-//To remove all the data stored in LocalStorage, use the clear() function:
-
-//localStorage.clear();
-//The key() function allows us to retrieve the key of an item saved in LocalStorage by its index. The browser creates an integer index for each item added to LocalStorage.
-
-//As we don't generate this index, we should not use the index to retrieve keys directly. However, we can use this function to get all keys stored in LocalStorage:
-
-//for (let i = 0; i < localStorage.length; i++) {
-   // let storedValue = localStorage.key(i);
-    //console.log(`Item at ${i}: ${storedValue}`);
-//}
