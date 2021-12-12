@@ -10,7 +10,9 @@ var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
-  "/standings?season=" + year + "&sort=asc";
+  "/standings?season=" +
+  year +
+  "&sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 
 /*fetch(highlightsApi)
@@ -40,7 +42,7 @@ var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 // Fetches the API that shows football league standings from different competitions
 fetch(standingsApi)
   .then(function (response) {
-      return response.json();
+    return response.json();
   })
   .then(function (data) {
     // Creates variable to make the API values easier for humans to understand
@@ -63,9 +65,9 @@ fetch(standingsApi)
       var goalsAgainst = document.createElement("td");
       var goalDifference = document.createElement("td");
       var points = document.createElement("td");
-      
+
       // Gets the team's stats from the API and inserting them where they go
-      position.textContent = (i + 1); // Gets index and adds 1 to get team's league position
+      position.textContent = i + 1; // Gets index and adds 1 to get team's league position
       teamName.textContent = standingsInfo[i].team.name;
       played.textContent = standingsInfo[i].stats[3].value;
       wins.textContent = standingsInfo[i].stats[0].value;
@@ -75,7 +77,7 @@ fetch(standingsApi)
       goalsAgainst.textContent = standingsInfo[i].stats[5].value;
       goalDifference.textContent = standingsInfo[i].stats[9].value;
       points.textContent = standingsInfo[i].stats[6].value;
-      
+
       // Appends team's stats to the new row
       teamEl.appendChild(position);
       teamEl.appendChild(teamName);
@@ -101,7 +103,7 @@ fetch(leagueApi)
   .then(function (data) {
     // Creates variable to make the API values easier for humans to understand
     var leagueInfo = data.data;
-    
+
     for (var i = 0; i < leagueInfo.length; i++) {
       if (i == 5 || i == 6 || i == 7 || i == 9 || i == 13 || i == 16) {
         var listOption = document.createElement("option");
@@ -115,64 +117,65 @@ fetch(leagueApi)
     }
   });
 
-  const mySel = document.querySelector("#leagues"); 
-  mySel.addEventListener("change", leagueSelection()); 
-
+const mySel = document.querySelector("#leagues");
+mySel.addEventListener("change", leagueSelection());
 
 function leagueSelection() {
   localStorage.setItem("leagueId", this.value);
-  let val = localStorage.getItem("leagueId"); 
-  if (val) mySel.value = val; // set the dropdown 
+  let val = localStorage.getItem("leagueId");
+  if (val) mySel.value = val; // set the dropdown
   leagueId = val;
 
   fetch(standingsApi)
-  .then(function (response) {
+    .then(function (response) {
       return response.json();
-  })
-  .then(function (data) {
-    // Creates variable to make the API values easier for humans to understand
-    var standingsInfo = data.data.standings;
+    })
+    .then(function (data) {
+      // Creates variable to make the API values easier for humans to understand
+      var standingsInfo = data.data.standings;
 
-    // Iterates through every team in the selected league in order to create table of stats
-    for (var i = 0; i < standingsInfo.length; i++) {
-      var teamEl = document.querySelector("tr");
+      // Iterates through every team in the selected league in order to create table of stats
+      for (var i = 0; i < standingsInfo.length; i++) {
+        var teamEl = document.querySelector("tr");
 
-      // Creates an element on the row for each of the team's stats
-      var position = document.querySelector("th");
-      var teamName = document.querySelector("td");
-      var played = document.querySelector("td");
-      var wins = document.querySelector("td");
-      var draws = document.querySelector("td");
-      var losses = document.querySelector("td");
-      var goalsFor = document.querySelector("td");
-      var goalsAgainst = document.querySelector("td");
-      var goalDifference = document.querySelector("td");
-      var points = document.querySelector("td");
-      // Gets the team's stats from the API and inserting them where they go
-      position.textContent = (i + 1); // Gets index and adds 1 to get team's league position
-      teamName.textContent = standingsInfo[i].team.name;
-      played.textContent = standingsInfo[i].stats[3].value;
-      wins.textContent = standingsInfo[i].stats[0].value;
-      draws.textContent = standingsInfo[i].stats[2].value;
-      losses.textContent = standingsInfo[i].stats[1].value;
-      goalsFor.textContent = standingsInfo[i].stats[4].value;
-      goalsAgainst.textContent = standingsInfo[i].stats[5].value;
-      goalDifference.textContent = standingsInfo[i].stats[9].value;
-      points.textContent = standingsInfo[i].stats[6].value;
+        // Creates an element on the row for each of the team's stats
+        var position = document.querySelector("th");
+        var teamName = document.querySelector("td");
+        var played = document.querySelector("td");
+        var wins = document.querySelector("td");
+        var draws = document.querySelector("td");
+        var losses = document.querySelector("td");
+        var goalsFor = document.querySelector("td");
+        var goalsAgainst = document.querySelector("td");
+        var goalDifference = document.querySelector("td");
+        var points = document.querySelector("td");
+        // Gets the team's stats from the API and inserting them where they go
+        position.textContent = i + 1; // Gets index and adds 1 to get team's league position
+        teamName.textContent = standingsInfo[i].team.name;
+        played.textContent = standingsInfo[i].stats[3].value;
+        wins.textContent = standingsInfo[i].stats[0].value;
+        draws.textContent = standingsInfo[i].stats[2].value;
+        losses.textContent = standingsInfo[i].stats[1].value;
+        goalsFor.textContent = standingsInfo[i].stats[4].value;
+        goalsAgainst.textContent = standingsInfo[i].stats[5].value;
+        goalDifference.textContent = standingsInfo[i].stats[9].value;
+        points.textContent = standingsInfo[i].stats[6].value;
 
-  // if () {
+        // if () {
 
-  // } else if () {
+        // } else if () {
 
-  // } else if () {
+        // } else if () {
 
-  // } else if () {
+        // } else if () {
 
-  // } else if () {
+        // } else if () {
 
-  // } else {
+        // } else {
 
-  // }
+        // }
+      }
+    });
 }
 
 // window.onload = function() {
@@ -180,33 +183,31 @@ function leagueSelection() {
 // }
 
 /////////////////////widget
-  var objDiv1 = document.getElementById("widget1");
-  var objDiv2= document.getElementById("widget2");
-  objDiv1.scrollTop = objDiv1.scrollHeight;
-  objDiv2.scrollTop = objDiv2.scrollHeight;
+var objDiv1 = document.getElementById("widget1");
+var objDiv2 = document.getElementById("widget2");
+objDiv1.scrollTop = objDiv1.scrollHeight;
+objDiv2.scrollTop = objDiv2.scrollHeight;
 //////////////////////////
-  
-  var storage = document.querySelector ('.store')
-  //localStorage.setItem("eng", "English Premier League");
-  var retrievedObject = localStorage.getItem('a');
-  document.querySelector('.box').onclick = function(event) {
-    var a = event.target.innerHTML;
-    console.log(a);
-    localStorage.setItem('a', JSON.stringify(a));
-    
 
-  console.log('retrievedObject: ', JSON.parse(retrievedObject));
-  var listPl =document.createElement('button');
-  listPl.className="button is-black is-rounded is-outlined btns";
-  listPl.textContent=a;
+var storage = document.querySelector(".store");
+//localStorage.setItem("eng", "English Premier League");
+var retrievedObject = localStorage.getItem("a");
+document.querySelector(".box").onclick = function (event) {
+  var a = event.target.innerHTML;
+  console.log(a);
+  localStorage.setItem("a", JSON.stringify(a));
+
+  console.log("retrievedObject: ", JSON.parse(retrievedObject));
+  var listPl = document.createElement("button");
+  listPl.className = "button is-black is-rounded is-outlined btns";
+  listPl.textContent = a;
   storage.appendChild(listPl);
-  };
-  function myFunction() {
-    var listPl =document.createElement('button');
-    listPl.className="button is-black is-rounded is-outlined btns";
-    listPl.textContent= retrievedObject;
-    storage.appendChild(listPl);
-  }
-  
-  myFunction();
+};
+function myFunction() {
+  var listPl = document.createElement("button");
+  listPl.className = "button is-black is-rounded is-outlined btns";
+  listPl.textContent = retrievedObject;
+  storage.appendChild(listPl);
+}
 
+myFunction();
