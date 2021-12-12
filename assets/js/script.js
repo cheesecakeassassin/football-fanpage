@@ -40,7 +40,7 @@ var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 // Fetches the API that shows football league standings from different competitions
 fetch(standingsApi)
   .then(function (response) {
-    return response.json();
+      return response.json();
   })
   .then(function (data) {
     // Creates variable to make the API values easier for humans to understand
@@ -50,6 +50,7 @@ fetch(standingsApi)
     for (var i = 0; i < standingsInfo.length; i++) {
       // Creates a row in the table for a new team
       var teamEl = document.createElement("tr");
+      teamEl.id = standingsInfo[i];
 
       // Creates an element on the row for each of the team's stats
       var position = document.createElement("th");
@@ -100,21 +101,83 @@ fetch(leagueApi)
   .then(function (data) {
     // Creates variable to make the API values easier for humans to understand
     var leagueInfo = data.data;
-
+    
     for (var i = 0; i < leagueInfo.length; i++) {
       if (i == 5 || i == 6 || i == 7 || i == 9 || i == 13 || i == 16) {
-        var league = leagueInfo[i].name;
         var listOption = document.createElement("option");
+
         listOption.id = leagueInfo[i].id;
-        listOption.textContent = league;
+        listOption.value = leagueInfo[i].id;
+        listOption.textContent = leagueInfo[i].name;
+
         leaguesDropdown.appendChild(listOption);
       }
     }
   });
 
-function leagueSelection() {
+  const mySel = document.querySelector("#leagues"); 
+  mySel.addEventListener("change", leagueSelection()); 
 
+
+function leagueSelection() {
+  localStorage.setItem("leagueId", this.value);
+  let val = localStorage.getItem("leagueId"); 
+  if (val) mySel.value = val; // set the dropdown 
+  leagueId = val;
+
+  fetch(standingsApi)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (data) {
+    // Creates variable to make the API values easier for humans to understand
+    var standingsInfo = data.data.standings;
+
+    // Iterates through every team in the selected league in order to create table of stats
+    for (var i = 0; i < standingsInfo.length; i++) {
+      var teamEl = document.querySelector("tr");
+
+      // Creates an element on the row for each of the team's stats
+      var position = document.querySelector("th");
+      var teamName = document.querySelector("td");
+      var played = document.querySelector("td");
+      var wins = document.querySelector("td");
+      var draws = document.querySelector("td");
+      var losses = document.querySelector("td");
+      var goalsFor = document.querySelector("td");
+      var goalsAgainst = document.querySelector("td");
+      var goalDifference = document.querySelector("td");
+      var points = document.querySelector("td");
+      // Gets the team's stats from the API and inserting them where they go
+      position.textContent = (i + 1); // Gets index and adds 1 to get team's league position
+      teamName.textContent = standingsInfo[i].team.name;
+      played.textContent = standingsInfo[i].stats[3].value;
+      wins.textContent = standingsInfo[i].stats[0].value;
+      draws.textContent = standingsInfo[i].stats[2].value;
+      losses.textContent = standingsInfo[i].stats[1].value;
+      goalsFor.textContent = standingsInfo[i].stats[4].value;
+      goalsAgainst.textContent = standingsInfo[i].stats[5].value;
+      goalDifference.textContent = standingsInfo[i].stats[9].value;
+      points.textContent = standingsInfo[i].stats[6].value;
+
+  // if () {
+
+  // } else if () {
+
+  // } else if () {
+
+  // } else if () {
+
+  // } else if () {
+
+  // } else {
+
+  // }
 }
+
+// window.onload = function() {
+//   document.querySelector("option").addEventListener("click", leagueSelection);
+// }
 
 /////////////////////widget
   var objDiv1 = document.getElementById("widget1");
