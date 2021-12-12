@@ -13,76 +13,77 @@
   font-size: 215%;
   color: black;
 }
+
 .euro1 {
   text-align: center;
 }
+
 .hero {
   background-color: rgb(9 120 105 / 77%);
 }
 
-
-
-body {background-color: rgba(51, 49, 49, 0.356);
-
+body {
+  background-color: rgba(51, 49, 49, 0.356);
 }
+
 li {
   color: rgb(240, 27, 27);
 }
+
 p {
   color: rgb(0, 0, 0);
   font-size: xx-large;
   font-weight: bolder;
 }
-p{
-    color: rgb(0, 0, 0);
-    font-size: xx-large;
-    font-weight: bolder;
-}
 
-.divp{
+.divp {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
   justify-content: space-around;
 }
-.scroll1{
-   margin-top: 13px;
-   
-};
-.scroll2{
-    margin-top: 13px;
-    width: 600px;
-    overflow:scroll;
-};
-.ball{
-  display: block;
+
+.scroll1 {
+  margin-top: 13px;
 }
-footer{
+
+.scroll2 {
+  margin-top: 13px;
+  width: 600px;
+  overflow: scroll;
+}
+
+.ball {
+  display: inline-block;
+}
+
+footer {
   background-color: rgb(9 120 105 / 77%);
 }
 
-.footer1{
+.footer1 {
   font-size: large;
- 
 }
+
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 863px) {
-  .ball{
+  .ball {
     display: none;
   }
-
 
   .football-title {
     font-size: 130%;
   }
- 
-  .divp{
-    
+
+  .divp {
     margin: auto;
   }
-.footer1{
-  font-size: small;
- 
+
+  .footer1 {
+    font-size: small;
+  }
 }
+#table{
+  width: 100%;
 }
