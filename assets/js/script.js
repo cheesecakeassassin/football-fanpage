@@ -1,4 +1,4 @@
-var selectOne = document.querySelector(".one");
+var standingsTable = document.querySelector(".table-info");
 var selectTwo = document.querySelector("#two");
 var selectLeague = document.querySelector("#three");
 var selectVid = document.querySelector("#vid");
@@ -15,7 +15,7 @@ var standingsApi =
   "/standings?season=" + year + "&sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 
-fetch(highlightsApi)
+/*fetch(highlightsApi)
   .then(function (response) {
     return response.json();
   })
@@ -37,22 +37,60 @@ fetch(highlightsApi)
 
       console.log(data.response[i].videos[0]);
     }
-  });
+  });*/
 
+// Fetches the API that shows football league standings from different competitions
 fetch(standingsApi)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log("Standings \n----------");
-    console.log(data);
+    // Creates variable to make the API values easier for humans to understand
+    var standingsInfo = data.data.standings;
 
-    for (var i = 0; i < data.data.standings.length; i++) {
-      //console.log (data.data.standings[i])
-      var standings = data.data.standings[i].team.name;
-      var listItem = document.createElement("li");
-      listItem.textContent = standings;
-      selectOne.appendChild(listItem);
+    // Iterates through every team in the selected league in order to create table of stats
+    for (var i = 0; i < standingsInfo.length; i++) {
+      // Creates a row in the table for a new team
+      var teamEl = document.createElement("tr");
+
+      // Creates an element on the row for each of the team's stats
+      var position = document.createElement("th");
+      var teamName = document.createElement("td");
+      var played = document.createElement("td");
+      var wins = document.createElement("td");
+      var draws = document.createElement("td");
+      var losses = document.createElement("td");
+      var goalsFor = document.createElement("td");
+      var goalsAgainst = document.createElement("td");
+      var goalDifference = document.createElement("td");
+      var points = document.createElement("td");
+      
+      // Gets the team's stats from the API and inserting them where they go
+      position.textContent = (i + 1); // Gets index and adds 1 to get team's league position
+      teamName.textContent = standingsInfo[i].team.name;
+      played.textContent = standingsInfo[i].stats[3].value;
+      wins.textContent = standingsInfo[i].stats[0].value;
+      draws.textContent = standingsInfo[i].stats[2].value;
+      losses.textContent = standingsInfo[i].stats[1].value;
+      goalsFor.textContent = standingsInfo[i].stats[4].value;
+      goalsAgainst.textContent = standingsInfo[i].stats[5].value;
+      goalDifference.textContent = standingsInfo[i].stats[9].value;
+      points.textContent = standingsInfo[i].stats[6].value;
+      
+      // Appends team's stats to the new row
+      teamEl.appendChild(position);
+      teamEl.appendChild(teamName);
+      teamEl.appendChild(played);
+      teamEl.appendChild(wins);
+      teamEl.appendChild(draws);
+      teamEl.appendChild(losses);
+      teamEl.appendChild(goalsFor);
+      teamEl.appendChild(goalsAgainst);
+      teamEl.appendChild(goalDifference);
+      teamEl.appendChild(points);
+
+      // Adding completed team row to the table
+      standingsTable.appendChild(teamEl);
     }
   });
 
@@ -80,25 +118,59 @@ fetch(leagueApi)
   var objDiv2= document.getElementById("widget2");
   objDiv1.scrollTop = objDiv1.scrollHeight;
   objDiv2.scrollTop = objDiv2.scrollHeight;
-
+//////////////////////////
   //localStorage
-  localStorage.setItem("tech", "JavaScript");
+  //var preferedLeague = {'eng': 'English Premier', 'fra':'Leaguefrance ligue 1','ger': 'German Bundesliga', 'ita' : 'Italian Serie A','por' :'Portuguese Liga','spa': 'Spanish Primera Division'}
+  //var eng = 'English Premier League';
+  //var fra = 'france ligue 1';
+  //var ger = 'German Bundesliga' ;
+  //var ita = 'Italian Serie A';
+  //var por ='Portuguese Liga';
+ // var spa = 'Spanish Primera Division'
+  var storage = document.querySelector ('.store')
+  //localStorage.setItem("eng", "English Premier League");
+  var retrievedObject = localStorage.getItem('a');
+  document.querySelector('.box').onclick = function(event) {
+    var a = event.target.innerHTML;
+    console.log(a);
+    localStorage.setItem('a', JSON.stringify(a));
+    
 
-  let techStack = localStorage.getItem("tech");
-console.log(techStack);
+  console.log('retrievedObject: ', JSON.parse(retrievedObject));
+  var listPl =document.createElement('button');
+  listPl.textContent=a;
+  storage.appendChild(listPl);
+  };
+  function myFunction() {
+    var listPl =document.createElement('button');
+    listPl.textContent= retrievedObject;
+    storage.appendChild(listPl);
+  }
+  
+  myFunction();
+// Put the object into storage
+//localStorage.setItem('preferedLeague', JSON.stringify(preferedLeague));
 
-localStorage.removeItem("tech");
+  //let setEng= localStorage.setItem("pLeague","a");
+//console.log(pLeague);
+//let getEng= localStorage.getItem("eng");
+//console.log (getEng);
+//var listStorage = document.createElement("P");
+       // listStorage.textContent = eng;
+       // storage.appendChild(listStorage);
+//console.log(getEng);
+////localStorage.removeItem("tech");
 //To confirm it was removed, try to retrieve it once more:
 
-console.log(localStorage.getItem("tech"));
+//console.log(localStorage.getItem("tech"));
 //To remove all the data stored in LocalStorage, use the clear() function:
 
-localStorage.clear();
+//localStorage.clear();
 //The key() function allows us to retrieve the key of an item saved in LocalStorage by its index. The browser creates an integer index for each item added to LocalStorage.
 
 //As we don't generate this index, we should not use the index to retrieve keys directly. However, we can use this function to get all keys stored in LocalStorage:
 
-for (let i = 0; i < localStorage.length; i++) {
-    let storedValue = localStorage.key(i);
-    console.log(`Item at ${i}: ${storedValue}`);
-}
+//for (let i = 0; i < localStorage.length; i++) {
+   // let storedValue = localStorage.key(i);
+    //console.log(`Item at ${i}: ${storedValue}`);
+//}
