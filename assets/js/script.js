@@ -1,12 +1,10 @@
 var standingsTable = document.querySelector(".table-info");
-var selectTwo = document.querySelector("#two");
-var selectLeague = document.querySelector("#three");
+var leaguesDropdown = document.querySelector("#leagues");
+var yearsDropdown = document.querySelector("#years");
 var selectVid = document.querySelector("#vid");
 
 var leagueId = "eng.1"; // The default league shown is the English Premier League
 var year = "2021"; // The default year will be 2021
-var leagues;
-var listOption;
 
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
@@ -94,25 +92,30 @@ fetch(standingsApi)
     }
   });
 
-// selectLeague downdrop
+// leaguesDropdown downdrop
 fetch(leagueApi)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log("Leagueeeeeee");
-    console.log(data.data);
+    // Creates variable to make the API values easier for humans to understand
+    var leagueInfo = data.data;
 
-    // TODO: Loop through the response
-    for (var i = 0; i < data.data.length; i++) {
+    for (var i = 0; i < leagueInfo.length; i++) {
       if (i == 5 || i == 6 || i == 7 || i == 9 || i == 13 || i == 16) {
-        leagues = data.data[i].name;
-        listOption = document.createElement("option");
-        listOption.textContent = leagues;
-        selectLeague.appendChild(listOption);
+        var league = leagueInfo[i].name;
+        var listOption = document.createElement("option");
+        listOption.id = leagueInfo[i].id;
+        listOption.textContent = league;
+        leaguesDropdown.appendChild(listOption);
       }
     }
   });
+
+function leagueSelection() {
+
+}
+
 /////////////////////widget
   var objDiv1 = document.getElementById("widget1");
   var objDiv2= document.getElementById("widget2");
