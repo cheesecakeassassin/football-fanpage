@@ -187,6 +187,15 @@ document.querySelector(".box").onclick = function (event) {
   storage.appendChild(listPl);
 };
 
+function myFunction() {
+  var listPl =document.createElement('button');
+  listPl.className="button is-black is-rounded is-outlined btns";
+  listPl.textContent= retrievedObject;
+  storage.appendChild(listPl);
+}
+
+myFunction();
+
 // Script for modal in the footer
 const modal = 
             document.querySelector('.modal');
