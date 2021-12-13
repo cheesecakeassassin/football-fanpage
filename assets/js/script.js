@@ -3,15 +3,12 @@ var leaguesDropdown = document.querySelector("#leagues");
 var selectVid = document.querySelector("#vid");
 
 var leagueId = localStorage.getItem("leagueId");
-var year = 2021;
 
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
-  "/standings?season=" +
-  year +
-  "&sort=asc";
+  "/standings?season=2021&sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 
 // Fetches the API that shows football league standings from different competitions
@@ -108,9 +105,7 @@ function leagueSelection() {
   standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
-  "/standings?season=" +
-  year +
-  "&sort=asc";
+  "/standings?season=2021&sort=asc";
   console.log(standingsApi);
 
   fetch(standingsApi)
