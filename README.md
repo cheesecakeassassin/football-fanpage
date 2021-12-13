@@ -2,6 +2,8 @@
 
 ## purpuse
 Football Fan Cenetral 
+football Fan Central was created for soccer fans all around the world to follow their favorite league/team that was recorded throughout history.
+
 
 ## built with
 * HTML
