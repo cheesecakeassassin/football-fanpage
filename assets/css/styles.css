@@ -36,6 +36,11 @@ p {
   font-weight: bolder;
 }
 
+.dropdowns {
+  margin-top: 50px;
+  text-align: center;
+}
+
 .divp {
   display: flex;
   flex-wrap: wrap;
@@ -94,5 +99,6 @@ footer {
 }
 
 #table{
-  width: 100%;
+  width: 75%;
+  margin: auto;
 }
