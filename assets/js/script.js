@@ -119,22 +119,8 @@ objDiv2.scrollTop = objDiv2.scrollHeight;
 
 var storage = document.querySelector(".store");
 var retrievedObject = localStorage.getItem("leagueName");
-document.querySelector(".box").onclick = function (event) {
-  var leagueName = event.target.innerHTML;
-  leagueId = event.target.id;
-  localStorage.setItem("leagueId", leagueId);
-  localStorage.setItem("leagueName", leagueName);
 
-  var listPl = document.createElement("button");
-  listPl.className = "button is-black is-rounded is-outlined btns";
-  listPl.textContent = leagueName;
-  console.log(listPl);
-  storage.appendChild(listPl);
-
-  leagueSelection();
-};
-
-function myFunction() {
+function modalEventHandler() {
   var listPl = document.createElement("button");
   listPl.className = "button is-black is-rounded is-outlined btns";
 
@@ -142,9 +128,19 @@ function myFunction() {
     listPl.textContent = retrievedObject;
     storage.appendChild(listPl);
   }
-}
 
-myFunction();
+  document.querySelector(".box").onclick = function (event) {
+    var leagueName = event.target.innerHTML;
+    leagueId = event.target.id;
+    localStorage.setItem("leagueId", leagueId);
+    localStorage.setItem("leagueName", leagueName);
+
+    listPl.textContent = leagueName;
+    storage.appendChild(listPl);
+
+    leagueSelection();
+  };
+}
 
 // Script for modal in the footer
 const modal = document.querySelector(".modal");
@@ -183,3 +179,7 @@ window.addEventListener("click", function (event) {
     modal.style.display = "none";
   }
 });
+
+// Functions to run at the start
+leagueSelection();
+modalEventHandler();
