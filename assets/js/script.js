@@ -1,12 +1,24 @@
+// API variables
+var highlightsApi = "https://www.scorebat.com/video-api/v3/";
+var leagueApi = " https://api-football-standings.azharimm.site/leagues";
+var standingsApi =
+  " https://api-football-standings.azharimm.site/leagues/" +
+  leagueId +
+  "/standings?season=" +
+  year +
+  "sort=asc";
+
+// Variables for 'Standings' section of page including the table and dropdown menus
 var standingsTable = document.querySelector(".table-info");
 var leaguesDropdown = document.querySelector("#leagues");
 var yearsDropdown = document.querySelector("#years");
-var selectVid = document.querySelector("#vid");
 
+// Variables for dynamically changing the URL of standingsApi
+var preferredLeagueId; // Used to separately store which league is the user's favorite
 var leagueId = localStorage.getItem("leagueId");
-var preferredLeagueId;
-
 var year = localStorage.getItem("year");
+
+// Constant to declare an array of the years users can select in the dropdown
 const yearsArray = [
   "2021",
   "2020",
@@ -26,15 +38,7 @@ const yearsArray = [
   "2006",
 ];
 
-var highlightsApi = "https://www.scorebat.com/video-api/v3/";
-var standingsApi =
-  " https://api-football-standings.azharimm.site/leagues/" +
-  leagueId +
-  "/standings?season=" +
-  year +
-  "sort=asc";
-var leagueApi = " https://api-football-standings.azharimm.site/leagues";
-
+// Function that creates dropdown options for the years dropdown using yearsArray
 function createYearDropdownOptions() {
   for (var i = 0; i < yearsArray.length; i++) {
     var yearOption = document.createElement("option");
@@ -44,19 +48,19 @@ function createYearDropdownOptions() {
   }
 }
 
-// Handles click events on the year dropdown
+// Event listener that stores which year was clicked in the years dropdown
 const yearDropdownSelection = yearsDropdown;
 yearDropdownSelection.addEventListener("change", function () {
   localStorage.setItem("year", this.value);
   let val = localStorage.getItem("year");
-  if (val) yearDropdownSelection.value = val; // set the dropdown
+  if (val) yearDropdownSelection.value = val;
 
   year = val;
 
-  leagueSelection();
+  leagueSelection(); // Changes standings table to reflect chosen year
 });
 
-// leaguesDropdown downdrop
+// Fetches API to create league dropdown for only the top 5 leagues
 fetch(leagueApi)
   .then(function (response) {
     return response.json();
@@ -65,6 +69,7 @@ fetch(leagueApi)
     // Creates variable to make the API values easier for humans to understand
     var leagueInfo = data.data;
 
+    // Specific numbers chosen because they represent the most popular leagues in the API
     for (var i = 0; i < leagueInfo.length; i++) {
       if (i == 5 || i == 6 || i == 7 || i == 9 || i == 13 || i == 16) {
         var listOption = document.createElement("option");
@@ -83,7 +88,8 @@ const leagueDropdownSelection = leaguesDropdown;
 leagueDropdownSelection.addEventListener("change", function () {
   localStorage.setItem("leagueId", this.value);
   let val = localStorage.getItem("leagueId");
-  if (val) leagueDropdownSelection.value = val; // set the dropdown
+  if (val) leagueDropdownSelection.value = val;
+
   // Keeps the league standings consistent with the "Preferred League" after refreshing
   if (leagueId != null) {
     preferredLeagueId = leagueId;
@@ -92,13 +98,15 @@ leagueDropdownSelection.addEventListener("change", function () {
 
   leagueId = val;
 
-  leagueSelection();
+  leagueSelection(); // Changing standings table to reflect selected league
 });
 
-// Function that selects league and displays stats
+// Function that creates standings table with stats using league and year chosen by user
 function leagueSelection() {
+  // Clears table before creating a new one
   standingsTable.innerHTML = "";
 
+  // If no year is yet to be chosen, it defaults to the 2021 season
   if (year == null) {
     localStorage.setItem("year", 2021);
     year = 2021; // current season
@@ -166,29 +174,27 @@ function leagueSelection() {
       }
     });
 }
-// window.onload = function() {
-//   document.querySelector("option").addEventListener("click", leagueSelection);
-// }
 
-/////////////////////widget
+// Highlights widgets
 var objDiv1 = document.getElementById("widget1");
 var objDiv2 = document.getElementById("widget2");
 objDiv1.scrollTop = objDiv1.scrollHeight;
 objDiv2.scrollTop = objDiv2.scrollHeight;
-//////////////////////////
 
 var storage = document.querySelector(".store");
 var retrievedObject = localStorage.getItem("leagueName");
 
+// Function to handle selection of a team in the modal and displaying preferred team
 function modalEventHandler() {
   var listPl = document.createElement("button");
   listPl.className = "button is-black is-rounded is-outlined btns";
 
+  // If user hasn't chosen a preferred league yet, a blank button will not show up
   if (retrievedObject != null) {
     listPl.textContent = retrievedObject;
     storage.appendChild(listPl);
   }
-
+  // Event listener that checks which league was chosen and stores it in local storage
   document.querySelector(".box").onclick = function (event) {
     var leagueName = event.target.innerHTML;
     leagueId = event.target.id;
@@ -198,7 +204,7 @@ function modalEventHandler() {
     listPl.textContent = leagueName;
     storage.appendChild(listPl);
 
-    leagueSelection();
+    leagueSelection(); // Changes standing table to reflect selected league
   };
 }
 
@@ -215,7 +221,6 @@ const close6 = document.querySelector(".btn6");
 btn.addEventListener("click", function () {
   modal.style.display = "block";
 });
-
 close1.addEventListener("click", function () {
   modal.style.display = "none";
 });
@@ -241,6 +246,6 @@ window.addEventListener("click", function (event) {
 });
 
 // Functions to run at the start
-createYearDropdownOptions()
+createYearDropdownOptions();
 leagueSelection();
 modalEventHandler();
