@@ -15,30 +15,6 @@ var standingsApi =
   "&sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 
-/*fetch(highlightsApi)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log("Highlights \n----------");
-
-    // TODO: Loop through the response
-    for (var i = 0; i < 3; i++) {
-      var competitions = data.response[i].competition;
-      var listOption2 = document.createElement("option");
-      listOption2.textContent = competitions;
-      selectTwo.appendChild(listOption2);
-
-      var video = data.response[i].videos[0].embed;
-      var listVideo = document.createElement("div");
-
-      listVideo.innerHTML = video;
-      selectVid.appendChild(listVideo);
-
-      console.log(data.response[i].videos[0]);
-    }
-  });*/
-
 // Fetches the API that shows football league standings from different competitions
 fetch(standingsApi)
   .then(function (response) {
@@ -130,7 +106,6 @@ mySel.addEventListener("change", function () {
 function leagueSelection() {
   standingsTable.innerHTML = "";
   
-  console.log("New league ID: " + leagueId);
   standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
@@ -232,6 +207,64 @@ function myFunction() {
 }
 
 myFunction();
+
+// Script for modal in the footer
+const modal = 
+            document.querySelector('.modal');
+    const btn = 
+            document.querySelector('#btn')
+      const close1 = 
+            document.querySelector('.btn1')
+      const close2 = 
+            document.querySelector('.btn2')
+      const close3 = 
+            document.querySelector('.btn3')
+      const close4 = 
+            document.querySelector('.btn4')
+      const close5 = 
+            document.querySelector('.btn5')
+      const close6 = 
+            document.querySelector('.btn6')
+      const close7 = 
+            document.querySelector('.btn2')  
+    
+      btn.addEventListener('click',
+                           function () {
+        modal.style.display = 'block'
+        
+      })
+      
+      close1.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close2.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close3.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close4.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close5.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close6.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      window.addEventListener('click',
+                              function (event) {
+        if (event.target.className === 
+            'modal-background') {
+          modal.style.display = 'none'
+        }
+      })
 // Put the object into storage
 //localStorage.setItem('preferedLeague', JSON.stringify(preferedLeague));
 
