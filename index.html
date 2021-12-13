@@ -24,15 +24,15 @@
         <div class="euro1"><img src="./assets/images/euro1.jpeg" width="300" height="120" /></div>
         <p class="subtitle">
         <div class="navbar">
-          <p>Highlights</p>
-          <p>Standings</p>
+          <a href="#high"><p>Highlights</p></a>
+          <a href="#stand"><p>Standings</p></a>
         </div>
         </p>
       </div>
     </section>
   </header>
 
-  <div class="columns widget divp">
+  <div id="high"class="columns widget divp">
     <div style=" overflow-y: scroll; height:500px; width: 700px;" id="widget1" class="scroll1"><iframe
         src="https://www.scorebat.com/embed/" frameborder="0" width="800" height="760" allowfullscreen
         allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-<div class=" select is-rounded is-large is-black col-md-4" >
+<div id="stand"class=" select is-rounded is-large is-black col-md-4" >
   <select id="leagues">
         <option value=''><strong>select league</strong></option>
   </select>
