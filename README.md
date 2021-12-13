@@ -1,7 +1,7 @@
 # group5-football-fanpage
 
 ## Purpose
-Football Fan Cenetral 
+Football Fan Central 
 
 ## Built with
 * HTML
