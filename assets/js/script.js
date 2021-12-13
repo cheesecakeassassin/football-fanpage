@@ -5,6 +5,8 @@ var selectVid = document.querySelector("#vid");
 
 var leagueId = localStorage.getItem("leagueId");
 var preferredLeagueId;
+
+var year = localStorage.getItem("year");
 const yearsArray = [
   "2021",
   "2020",
@@ -28,10 +30,27 @@ var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
-  "/standings?season=2021sort=asc";
+  "/standings?season=" + year + "sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 
+for (var i = 0; i < yearsArray.length; i++) {
+  var yearOption = document.createElement("option");
+  yearOption.textContent = yearsArray[i];
 
+  yearsDropdown.appendChild(yearOption);
+}
+
+// Handles click events on the league dropdown
+const yearDropdownSelection = yearsDropdown;
+yearDropdownSelection.addEventListener("change", function () {
+  localStorage.setItem("year", this.value);
+  let val = localStorage.getItem("year");
+  if (val) yearDropdownSelection.value = val; // set the dropdown
+  
+  year = val;
+
+  leagueSelection();
+});
 
 // leaguesDropdown downdrop
 fetch(leagueApi)
@@ -56,7 +75,7 @@ fetch(leagueApi)
   });
 
 // Handles click events on the league dropdown
-const leagueDropdownSelection = document.querySelector("#leagues");
+const leagueDropdownSelection = leaguesDropdown;
 leagueDropdownSelection.addEventListener("change", function () {
   localStorage.setItem("leagueId", this.value);
   let val = localStorage.getItem("leagueId");
@@ -76,10 +95,15 @@ leagueDropdownSelection.addEventListener("change", function () {
 function leagueSelection() {
   standingsTable.innerHTML = "";
 
+  if (year == null) {
+    localStorage.setItem("year", 2021);
+    year = 2021; // current season
+  }
+
   standingsApi =
     " https://api-football-standings.azharimm.site/leagues/" +
     leagueId +
-    "/standings?season=2021&sort=asc";
+    "/standings?season=" + year + "&sort=asc";
 
   // Fetches the API that shows football league standings from different competitions
   fetch(standingsApi)
