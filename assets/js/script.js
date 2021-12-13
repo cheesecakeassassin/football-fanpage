@@ -1,6 +1,5 @@
 var standingsTable = document.querySelector(".table-info");
 var leaguesDropdown = document.querySelector("#leagues");
-var yearsDropdown = document.querySelector("#years");
 var selectVid = document.querySelector("#vid");
 
 var leagueId = localStorage.getItem("leagueId");
@@ -179,36 +178,19 @@ var objDiv2 = document.getElementById("widget2");
 objDiv1.scrollTop = objDiv1.scrollHeight;
 objDiv2.scrollTop = objDiv2.scrollHeight;
 //////////////////////////
-//localStorage
-//var preferedLeague = {'eng': 'English Premier', 'fra':'Leaguefrance ligue 1','ger': 'German Bundesliga', 'ita' : 'Italian Serie A','por' :'Portuguese Liga','spa': 'Spanish Primera Division'}
-//var eng = 'English Premier League';
-//var fra = 'france ligue 1';
-//var ger = 'German Bundesliga' ;
-//var ita = 'Italian Serie A';
-//var por ='Portuguese Liga';
-// var spa = 'Spanish Primera Division'
+
 var storage = document.querySelector(".store");
-//localStorage.setItem("eng", "English Premier League");
-var retrievedObject = localStorage.getItem("a");
+var retrievedObject = localStorage.getItem("leagueName");
 document.querySelector(".box").onclick = function (event) {
-  var a = event.target.innerHTML;
-  console.log(a);
-  localStorage.setItem("a", JSON.stringify(a));
+  var leagueName = event.target.innerHTML;
+  localStorage.setItem("leagueName", JSON.stringify(leagueName));
 
   console.log("retrievedObject: ", JSON.parse(retrievedObject));
   var listPl = document.createElement("button");
   listPl.className = "button is-black is-rounded is-outlined btns";
-  listPl.textContent = a;
+  listPl.textContent = leagueName;
   storage.appendChild(listPl);
 };
-function myFunction() {
-  var listPl = document.createElement("button");
-  listPl.className = "button is-black is-rounded is-outlined btns";
-  listPl.textContent = retrievedObject;
-  storage.appendChild(listPl);
-}
-
-myFunction();
 
 // Script for modal in the footer
 const modal = 
