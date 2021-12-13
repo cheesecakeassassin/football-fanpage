@@ -1,9 +1,8 @@
 var standingsTable = document.querySelector(".table-info");
 var leaguesDropdown = document.querySelector("#leagues");
-var yearsDropdown = document.querySelector("#years");
 var selectVid = document.querySelector("#vid");
 
-var leagueId;
+var leagueId = localStorage.getItem("leagueId");
 var year = 2021;
 
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
@@ -179,33 +178,74 @@ var objDiv2 = document.getElementById("widget2");
 objDiv1.scrollTop = objDiv1.scrollHeight;
 objDiv2.scrollTop = objDiv2.scrollHeight;
 //////////////////////////
-//localStorage
-//var preferedLeague = {'eng': 'English Premier', 'fra':'Leaguefrance ligue 1','ger': 'German Bundesliga', 'ita' : 'Italian Serie A','por' :'Portuguese Liga','spa': 'Spanish Primera Division'}
-//var eng = 'English Premier League';
-//var fra = 'france ligue 1';
-//var ger = 'German Bundesliga' ;
-//var ita = 'Italian Serie A';
-//var por ='Portuguese Liga';
-// var spa = 'Spanish Primera Division'
+
 var storage = document.querySelector(".store");
-//localStorage.setItem("eng", "English Premier League");
-var retrievedObject = localStorage.getItem("a");
+var retrievedObject = localStorage.getItem("leagueName");
 document.querySelector(".box").onclick = function (event) {
-  var a = event.target.innerHTML;
-  console.log(a);
-  localStorage.setItem("a", JSON.stringify(a));
+  var leagueName = event.target.innerHTML;
+  localStorage.setItem("leagueName", JSON.stringify(leagueName));
 
   console.log("retrievedObject: ", JSON.parse(retrievedObject));
   var listPl = document.createElement("button");
   listPl.className = "button is-black is-rounded is-outlined btns";
-  listPl.textContent = a;
+  listPl.textContent = leagueName;
   storage.appendChild(listPl);
 };
-function myFunction() {
-  var listPl = document.createElement("button");
-  listPl.className = "button is-black is-rounded is-outlined btns";
-  listPl.textContent = retrievedObject;
-  storage.appendChild(listPl);
-}
 
-myFunction();
+// Script for modal in the footer
+const modal = 
+            document.querySelector('.modal');
+    const btn = 
+            document.querySelector('#btn')
+      const close1 = 
+            document.querySelector('.btn1')
+      const close2 = 
+            document.querySelector('.btn2')
+      const close3 = 
+            document.querySelector('.btn3')
+      const close4 = 
+            document.querySelector('.btn4')
+      const close5 = 
+            document.querySelector('.btn5')
+      const close6 = 
+            document.querySelector('.btn6')
+      const close7 = 
+            document.querySelector('.btn2')  
+    
+      btn.addEventListener('click',
+                           function () {
+        modal.style.display = 'block'
+        
+      })
+      
+      close1.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close2.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close3.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close4.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close5.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close6.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      window.addEventListener('click',
+                              function (event) {
+        if (event.target.className === 
+            'modal-background') {
+          modal.style.display = 'none'
+        }
+      })
