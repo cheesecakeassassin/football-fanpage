@@ -1,18 +1,18 @@
 # group5-football-fanpage
 
-## purpuse
+## Purpose
 Football Fan Cenetral 
 
-## built with
+## Built with
 * HTML
 * CSS
 * JavaScript
 
 
-## website 
+## Website 
 https://cheesecakeassassin.github.io/group5-football-fanpage/
 
-## github repository 
+## Github repository 
 SSH</br>
 git@github.com:cheesecakeassassin/group5-football-fanpage.git
 HTTPS</br>
@@ -24,5 +24,5 @@ https://github.com/cheesecakeassassin/group5-football-fanpage.git
 <img src="./assets/images/Screenshot 2021-12-12 101250.png">
 
 
-## contributions
+## Contributions
 ❤️Made by[Mohammed-Boussada],[Sebastian-Santa],[Souhila-boukari]
