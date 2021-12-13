@@ -27,4 +27,4 @@ https://github.com/cheesecakeassassin/group5-football-fanpage.git
 
 
 ## Contributions
-❤️Made by[Mohammed-Boussada],[Sebastian-Santa],[Souhila-boukari]
+❤️Made by [Mohammed-Boussada], [Sebastian-Santa], and [Souhila-Boukari]
