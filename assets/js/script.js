@@ -209,3 +209,61 @@ function myFunction() {
 }
 
 myFunction();
+
+// Script for modal in the footer
+const modal = 
+            document.querySelector('.modal');
+    const btn = 
+            document.querySelector('#btn')
+      const close1 = 
+            document.querySelector('.btn1')
+      const close2 = 
+            document.querySelector('.btn2')
+      const close3 = 
+            document.querySelector('.btn3')
+      const close4 = 
+            document.querySelector('.btn4')
+      const close5 = 
+            document.querySelector('.btn5')
+      const close6 = 
+            document.querySelector('.btn6')
+      const close7 = 
+            document.querySelector('.btn2')  
+    
+      btn.addEventListener('click',
+                           function () {
+        modal.style.display = 'block'
+        
+      })
+      
+      close1.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close2.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close3.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close4.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close5.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      close6.addEventListener('click',
+                             function () {
+        modal.style.display = 'none'
+      })
+      window.addEventListener('click',
+                              function (event) {
+        if (event.target.className === 
+            'modal-background') {
+          modal.style.display = 'none'
+        }
+      })
