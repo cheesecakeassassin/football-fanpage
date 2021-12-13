@@ -23,30 +23,34 @@ const yearsArray = [
   "2009",
   "2008",
   "2007",
-  "2006"
+  "2006",
 ];
 
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
-  "/standings?season=" + year + "sort=asc";
+  "/standings?season=" +
+  year +
+  "sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
 
-for (var i = 0; i < yearsArray.length; i++) {
-  var yearOption = document.createElement("option");
-  yearOption.textContent = yearsArray[i];
+function createYearDropdownOptions() {
+  for (var i = 0; i < yearsArray.length; i++) {
+    var yearOption = document.createElement("option");
+    yearOption.textContent = yearsArray[i];
 
-  yearsDropdown.appendChild(yearOption);
+    yearsDropdown.appendChild(yearOption);
+  }
 }
 
-// Handles click events on the league dropdown
+// Handles click events on the year dropdown
 const yearDropdownSelection = yearsDropdown;
 yearDropdownSelection.addEventListener("change", function () {
   localStorage.setItem("year", this.value);
   let val = localStorage.getItem("year");
   if (val) yearDropdownSelection.value = val; // set the dropdown
-  
+
   year = val;
 
   leagueSelection();
@@ -85,7 +89,7 @@ leagueDropdownSelection.addEventListener("change", function () {
     preferredLeagueId = leagueId;
     localStorage.setItem("leagueId", preferredLeagueId);
   }
-  
+
   leagueId = val;
 
   leagueSelection();
@@ -103,7 +107,9 @@ function leagueSelection() {
   standingsApi =
     " https://api-football-standings.azharimm.site/leagues/" +
     leagueId +
-    "/standings?season=" + year + "&sort=asc";
+    "/standings?season=" +
+    year +
+    "&sort=asc";
 
   // Fetches the API that shows football league standings from different competitions
   fetch(standingsApi)
@@ -235,5 +241,6 @@ window.addEventListener("click", function (event) {
 });
 
 // Functions to run at the start
+createYearDropdownOptions()
 leagueSelection();
 modalEventHandler();
