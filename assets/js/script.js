@@ -1,15 +1,37 @@
 var standingsTable = document.querySelector(".table-info");
 var leaguesDropdown = document.querySelector("#leagues");
+var yearsDropdown = document.querySelector("#years");
 var selectVid = document.querySelector("#vid");
 
 var leagueId = localStorage.getItem("leagueId");
+var preferredLeagueId;
+const yearsArray = [
+  "2021",
+  "2020",
+  "2019",
+  "2018",
+  "2017",
+  "2016",
+  "2015",
+  "2014",
+  "2013",
+  "2012",
+  "2011",
+  "2010",
+  "2009",
+  "2008",
+  "2007",
+  "2006"
+];
 
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
   " https://api-football-standings.azharimm.site/leagues/" +
   leagueId +
-  "/standings?season=2021&sort=asc";
+  "/standings?season=2021sort=asc";
 var leagueApi = " https://api-football-standings.azharimm.site/leagues";
+
+
 
 // leaguesDropdown downdrop
 fetch(leagueApi)
@@ -39,11 +61,18 @@ leagueDropdownSelection.addEventListener("change", function () {
   localStorage.setItem("leagueId", this.value);
   let val = localStorage.getItem("leagueId");
   if (val) leagueDropdownSelection.value = val; // set the dropdown
+  // Keeps the league standings consistent with the "Preferred League" after refreshing
+  if (leagueId != null) {
+    preferredLeagueId = leagueId;
+    localStorage.setItem("leagueId", preferredLeagueId);
+  }
+  
   leagueId = val;
 
   leagueSelection();
 });
 
+// Function that selects league and displays stats
 function leagueSelection() {
   standingsTable.innerHTML = "";
 
