@@ -33,11 +33,12 @@ fetch(leagueApi)
     }
   });
 
-const mySel = document.querySelector("#leagues");
-mySel.addEventListener("change", function () {
+// Handles click events on the league dropdown
+const leagueDropdownSelection = document.querySelector("#leagues");
+leagueDropdownSelection.addEventListener("change", function () {
   localStorage.setItem("leagueId", this.value);
   let val = localStorage.getItem("leagueId");
-  if (val) mySel.value = val; // set the dropdown
+  if (val) leagueDropdownSelection.value = val; // set the dropdown
   leagueId = val;
 
   leagueSelection();
