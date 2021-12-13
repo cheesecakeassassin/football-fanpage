@@ -1,8 +1,7 @@
 # group5-football-fanpage
 
 ## Purpose
-Football Fan Central 
-football Fan Central was created for soccer fans all around the world to follow their favorite league/team that was recorded throughout history.
+Football Fan Central was created for soccer fans all around the world to follow their favorite league/team that was recorded throughout history.
 
 
 ## Built with
