@@ -4,7 +4,7 @@ var yearsDropdown = document.querySelector("#years");
 var selectVid = document.querySelector("#vid");
 
 var leagueId;
-var year;
+var year = 2021;
 
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var standingsApi =
