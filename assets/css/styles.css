@@ -20,11 +20,13 @@ li {
 }
 
 p {
-    color: rgb(0 255 33);
+    color: rgb(0, 0, 0);
     font-size: xx-large;
     font-weight: bolder;
 }
-
+a{
+  color:#1aff00 ;
+}
 .footer {
   background-color: #05405614;
  
@@ -141,4 +143,5 @@ footer {
     .store2{
       margin-left: 100px;
     }
+    
 }
