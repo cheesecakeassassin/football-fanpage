@@ -157,6 +157,11 @@ function leagueSelection() {
                 goalDifference.textContent = standingsInfo[i].stats[9].value;
                 points.textContent = standingsInfo[i].stats[6].value;
 
+                // Adding class name to goals for, goals against, and goal difference for shrinking table for mobile
+                goalsFor.classList.add("goals-for");
+                goalsAgainst.classList.add("goals-against");
+                goalDifference.classList.add("goal-difference");
+
                 // Appends team's stats to the new row
                 teamEl.appendChild(position);
                 teamEl.appendChild(teamName);

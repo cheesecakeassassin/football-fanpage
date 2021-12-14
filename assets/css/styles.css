@@ -4,11 +4,11 @@
     padding: 0;
     margin: 0;
 }
-header{
-  background-image: url("../images/soccer.jpg");
-  
-  background-size: cover;
-  background-position: 80%;
+header {
+    background-image: url("../images/soccer.jpg");
+
+    background-size: cover;
+    background-position: 80%;
 }
 
 body {
@@ -24,12 +24,11 @@ p {
     font-size: xx-large;
     font-weight: bolder;
 }
-a{
-  color:#1aff00 ;
+a {
+    color: #1aff00;
 }
 .footer {
-  background-color: #05405614;
- 
+    background-color: #05405614;
 }
 
 .center {
@@ -47,16 +46,14 @@ a{
     font-size: 215%;
     color: rgb(255, 255, 255);
     font-style: italic;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-weight: normal;
-   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .euro1 {
     text-align: center;
 }
-
-
 
 .dropdowns {
     margin-top: 50px;
@@ -84,21 +81,19 @@ a{
 .ball {
     display: inline-block;
 }
-.global{
-  background-image: url("../images/soccer3.jpg");
-  background-size: cover;
-  background-position: 100%;
+.global {
+    background-image: url("../images/soccer3.jpg");
+    background-size: cover;
+    background-position: 100%;
 }
 
 .footer1 {
     font-size: large;
 }
 .store1 {
-
     display: inline-block;
-  
+
     border-radius: 50%;
-    
 }
 .store2 {
     color: white;
@@ -106,7 +101,7 @@ a{
     margin-left: 50px;
 }
 .button.is-rounded {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 
 #table {
@@ -127,21 +122,27 @@ a{
     .divp {
         margin: auto;
     }
-footer {
-  text-align: center;
-  padding-right: 200px;
-}
+
+    .goals-for,
+    .goals-against,
+    .goal-difference {
+        display: none;
+    }
+
+    footer {
+        text-align: center;
+        padding-right: 200px;
+    }
 
     .footer1 {
         font-size: small;
         margin-left: 120px;
     }
     .button.is-rounded {
-      margin-left: 100px;
+        margin-left: 100px;
     }
 
-    .store2{
-      margin-left: 100px;
+    .store2 {
+        margin-left: 100px;
     }
-    
 }
