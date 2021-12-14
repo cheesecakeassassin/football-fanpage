@@ -8,6 +8,7 @@ Football Fan Central was created for soccer fans all around the world to follow 
 * HTML
 * CSS
 * JavaScript
+* Bulma (CSS Framework)
 
 
 ## Website 
