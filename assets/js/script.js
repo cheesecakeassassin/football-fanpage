@@ -187,7 +187,7 @@ var retrievedObject = localStorage.getItem("leagueName");
 // Function to handle selection of a team in the modal and displaying preferred team
 function modalEventHandler() {
     var listPl = document.createElement("button");
-    listPl.className = "button is-black is-rounded is-outlined btns";
+    listPl.className = "button is-danger is-rounded btns";
 
     // If user hasn't chosen a preferred league yet, a blank button will not show up
     if (retrievedObject != null) {

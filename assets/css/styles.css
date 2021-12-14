@@ -18,13 +18,14 @@ li {
 }
 
 p {
-    color: rgb(0, 0, 0);
+    color: rgb(0 255 33);
     font-size: xx-large;
     font-weight: bolder;
 }
 
-footer {
-    background-color: rgb(9 120 105 / 77%);
+.footer {
+  background-color: #05405614;
+ 
 }
 
 .center {
@@ -40,7 +41,7 @@ footer {
 
 .football-title {
     font-size: 215%;
-    color: black;
+    color: rgb(0 255 33);
 }
 
 .euro1 {
@@ -75,14 +76,21 @@ footer {
 .ball {
     display: inline-block;
 }
+.global{
+  background-image: url("../images/soccer3.jpg");
+  background-size: cover;
+  background-position: 100%;
+}
 
 .footer1 {
     font-size: large;
 }
 .store1 {
+
     display: inline-block;
-    background-color: rgb(0, 0, 0);
-    border-radius: 3%;
+  
+    border-radius: 50%;
+    
 }
 .store2 {
     color: white;
