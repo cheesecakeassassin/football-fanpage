@@ -6,9 +6,11 @@
 }
 header{
   background-image: url("../images/soccer.jpg");
+  
   background-size: cover;
   background-position: 80%;
 }
+
 body {
     background-color: rgba(51, 49, 49, 0.356);
 }
@@ -115,6 +117,10 @@ p {
     .divp {
         margin: auto;
     }
+footer {
+  text-align: center;
+  padding-right: 200px;
+}
 
     .footer1 {
         font-size: small;
