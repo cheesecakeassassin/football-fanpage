@@ -23,8 +23,10 @@ https://github.com/cheesecakeassassin/group5-football-fanpage.git
 
 
 ## Working page screenshots 
-<img src="./assets/images/Screenshot 2021-12-12 101058.png">
-<img src="./assets/images/Screenshot 2021-12-12 101250.png">
+<img src="./assets/images/firstscreenshot.png">
+<img src="./assets/images/secondScreenshot.png">
+<img src="./assets/images/thirdScreenshot.png">
+<img src="./assets/images/fourthScreenshot.png">
 
 
 ## Contributions
