@@ -8,12 +8,13 @@ Football Fan Central was created for soccer fans all around the world to follow 
 * HTML
 * CSS
 * JavaScript
+* Bulma (CSS Framework)
 
 
 ## Website 
 https://cheesecakeassassin.github.io/group5-football-fanpage/
 
-## Github repository 
+## GitHub repository 
 SSH</br>
 git@github.com:cheesecakeassassin/group5-football-fanpage.git
 

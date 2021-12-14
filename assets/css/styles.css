@@ -4,6 +4,12 @@
     padding: 0;
     margin: 0;
 }
+header {
+    background-image: url("../images/soccer.jpg");
+
+    background-size: cover;
+    background-position: 80%;
+}
 
 body {
     background-color: rgba(51, 49, 49, 0.356);
@@ -18,9 +24,11 @@ p {
     font-size: xx-large;
     font-weight: bolder;
 }
-
-footer {
-    background-color: rgb(9 120 105 / 77%);
+a {
+    color: #1aff00;
+}
+.footer {
+    background-color: #05405614;
 }
 
 .center {
@@ -36,15 +44,15 @@ footer {
 
 .football-title {
     font-size: 215%;
-    color: black;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .euro1 {
     text-align: center;
-}
-
-.hero {
-    background-color: rgb(9 120 105 / 77%);
 }
 
 .dropdowns {
@@ -73,18 +81,27 @@ footer {
 .ball {
     display: inline-block;
 }
+.global {
+    background-image: url("../images/soccer3.jpg");
+    background-size: cover;
+    background-position: 100%;
+}
 
 .footer1 {
     font-size: large;
 }
 .store1 {
     display: inline-block;
-    background-color: rgb(0, 0, 0);
-    border-radius: 3%;
+
+    border-radius: 50%;
 }
 .store2 {
     color: white;
     font-size: larger;
+    margin-left: 50px;
+}
+.button.is-rounded {
+    margin-left: 50px;
 }
 
 #table {
@@ -106,8 +123,27 @@ footer {
         margin: auto;
     }
 
+    .goals-for,
+    .goals-against,
+    .goal-difference {
+        display: none;
+    }
+
+    footer {
+        text-align: center;
+        padding-right: 200px;
+    }
+
     .footer1 {
         font-size: small;
+        margin-left: 120px;
+    }
+    .button.is-rounded {
+        margin-left: 100px;
+    }
+
+    .store2 {
+        margin-left: 100px;
     }
 }
 header{

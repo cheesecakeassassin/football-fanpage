@@ -157,6 +157,11 @@ function leagueSelection() {
                 goalDifference.textContent = standingsInfo[i].stats[9].value;
                 points.textContent = standingsInfo[i].stats[6].value;
 
+                // Adding class name to goals for, goals against, and goal difference for shrinking table for mobile
+                goalsFor.classList.add("goals-for");
+                goalsAgainst.classList.add("goals-against");
+                goalDifference.classList.add("goal-difference");
+
                 // Appends team's stats to the new row
                 teamEl.appendChild(position);
                 teamEl.appendChild(teamName);
@@ -187,7 +192,7 @@ var retrievedObject = localStorage.getItem("leagueName");
 // Function to handle selection of a team in the modal and displaying preferred team
 function modalEventHandler() {
     var listPl = document.createElement("button");
-    listPl.className = "button is-black is-rounded is-outlined btns";
+    listPl.className = "button is-danger is-rounded btns";
 
     // If user hasn't chosen a preferred league yet, a blank button will not show up
     if (retrievedObject != null) {
