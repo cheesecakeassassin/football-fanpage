@@ -11,157 +11,385 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header>
     <section class="hero has-text-white">
       <div class="hero-body">
         <p class="title center">
-          <img class="ball" src="./assets/images/soccerBall.png" width="85" height="85" />
+          <img class="ball" alt="A picture of a Champions League ball" src="./assets/images/soccerBall.png" width="85"
+            height="85" />
           <a class="football-title" href="https://cheesecakeassassin.github.io/group5-football-fanpage/">Soccer Fan
             Central
           </a>
-          <img class="ball" src="./assets/images/soccerBall.png" width="85" height="85" />
+          <img class="ball" alt="A picture of a Champions League ball" src="./assets/images/soccerBall.png" width="85"
+            height="85" />
         </p>
-        <div class="euro1"><img src="./assets/images/euro1.jpeg" width="300" height="120" /></div>
-        <p class="subtitle">
-        <div class="navbar">
-          <a href="#high"><p>Highlights</p></a>
-          <a href="#stand"><p>Standings</p></a>
+        <div class="euro1">
+          <img alt="A picture with all of the top European soccer leagues" src="./assets/images/euro1.jpeg" width="300"
+            height="120" />
         </div>
-        </p>
+
+        <!-- Navbar -->
+        <div class="navbar">
+          <a href="#highlights-section">
+            <p>Highlights</p>
+          </a>
+          <a href="#standings-section">
+            <p>Standings</p>
+          </a>
+        </div>
       </div>
     </section>
   </header>
-<section class="background">
-  <div id="high"class="columns widget divp">
-    <div style=" overflow-y: scroll; height:500px; width: 700px;" id="widget1" class="scroll1"><iframe
-        src="https://www.scorebat.com/embed/" frameborder="0" width="800" height="760" allowfullscreen
-        allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
-        class="_scorebatEmbeddedPlayer_"></iframe>
-      <script>(function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>
-    </div>
-    <div style="margin-top: 13px; margin-left:0px; overflow-y: scroll; height: 500px;; width: 700px; " id="widget2"
-      class=" scroll2"><iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760"
-        allowfullscreen allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
-        class="_scorebatEmbeddedPlayer_"></iframe>
-      <script>(function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>
-    </div>
-  </div>
 
-<div id="stand"class=" select is-rounded is-large is-black col-md-4" >
-  <select id="leagues">
-        <option value=''><strong>select league</strong></option>
-  </select>
-</div>
-
-<br><br>
-<!--buttons-->
-  <ol></ol>
-  <table id="table" class="table is-hoverable is-striped">
-    <thead>
-      <tr>
-        <th><abbr title="Position">Pos</abbr></th>
-        <th>Team</th>
-        <th><abbr title="Played">Pld</abbr></th>
-        <th><abbr title="Won">W</abbr></th>
-        <th><abbr title="Drawn">D</abbr></th>
-        <th><abbr title="Lost">L</abbr></th>
-        <th><abbr title="Goals for">GF</abbr></th>
-        <th><abbr title="Goals against">GA</abbr></th>
-        <th><abbr title="Goal difference">GD</abbr></th>
-        <th><abbr title="Points">Pts</abbr></th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th><abbr title="Position">Pos</abbr></th>
-        <th>Team</th>
-        <th><abbr title="Played">Pld</abbr></th>
-        <th><abbr title="Won">W</abbr></th>
-        <th><abbr title="Drawn">D</abbr></th>
-        <th><abbr title="Lost">L</abbr></th>
-        <th><abbr title="Goals for">GF</abbr></th>
-        <th><abbr title="Goals against">GA</abbr></th>
-        <th><abbr title="Goal difference">GD</abbr></th>
-        <th><abbr title="Points">Pts</abbr></th>
-      </tr>
-    </tfoot>
-    <tbody class="table-info"></tbody>
-  </table>
+  <!-- Highlights section -->
+  <section id="highlights-section" class="columns widget divp">
+    <div style="overflow-y: scroll; height: 500px; width: 700px" id="widget1" class="scroll1">
+      <iframe src="https://www.scorebat.com/embed/" frameborder="0" width="800" height="760" allowfullscreen
+        allow="autoplay; fullscreen" style="
+                        width: 600px;
+                        height: 760px;
+                        overflow: hidden;
+                        display: block;
+                    " class="_scorebatEmbeddedPlayer_"></iframe>
+      <script>
+        (function (d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src =
+            "https://www.scorebat.com/embed/embed.js?v=arrv";
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "scorebat-jssdk");
+      </script>
+    </div>
+    <div style="
+                    margin-top: 13px;
+                    margin-left: 0px;
+                    overflow-y: scroll;
+                    height: 500px;
+                    width: 700px;
+                " id="widget2" class="scroll2">
+      <iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen
+        allow="autoplay; fullscreen" style="
+                        width: 600px;
+                        height: 760px;
+                        overflow: hidden;
+                        display: block;
+                    " class="_scorebatEmbeddedPlayer_"></iframe>
+      <script>
+        (function (d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src =
+            "https://www.scorebat.com/embed/embed.js?v=arrv";
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "scorebat-jssdk");
+      </script>
+    </div>
   </section>
-</section>
+
+  <!-- Standings section -->
+  <section id="standings-section">
+    <!-- Dropdown menus -->
+    <div class="dropdowns">
+      <div class="select is-rounded is-large is-black col-md-12">
+        <select id="leagues">
+          <option value=""><strong>Select league</strong></option>
+        </select>
+      </div>
+      <div class="select is-rounded is-large is-black col-md-4">
+        <select id="years">
+          <option value=""><strong>Select year</strong></option>
+        </select>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <!-- Standings table -->
+    <table id="table" class="table is-hoverable is-striped">
+      <thead>
+        <tr>
+          <th><abbr title="Position">Pos</abbr></th>
+          <th>Team</th>
+          <th><abbr title="Played">Pld</abbr></th>
+          <th><abbr title="Won">W</abbr></th>
+          <th><abbr title="Drawn">D</abbr></th>
+          <th><abbr title="Lost">L</abbr></th>
+          <th><abbr title="Goals for">GF</abbr></th>
+          <th><abbr title="Goals against">GA</abbr></th>
+          <th><abbr title="Goal difference">GD</abbr></th>
+          <th><abbr title="Points">Pts</abbr></th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th><abbr title="Position">Pos</abbr></th>
+          <th>Team</th>
+          <th><abbr title="Played">Pld</abbr></th>
+          <th><abbr title="Won">W</abbr></th>
+          <th><abbr title="Drawn">D</abbr></th>
+          <th><abbr title="Lost">L</abbr></th>
+          <th><abbr title="Goals for">GF</abbr></th>
+          <th><abbr title="Goals against">GA</abbr></th>
+          <th><abbr title="Goal difference">GD</abbr></th>
+          <th><abbr title="Points">Pts</abbr></th>
+        </tr>
+      </tfoot>
+      <tbody class="table-info"></tbody>
+    </table>
+  </section>
+
   <!--footer-->
   <footer class="footer">
     <div class="store1">
-      <p class="store2">Preferred Leagues:</p>
+      <p class="store2">Preferred League:</p>
     </div>
-    <hr>
+    <hr />
     <div>
       <p class="store"></p>
     </div>
-    <button id="clearbtn" onclick='remove()'>Clear Preferred league</button>
-    <div class='container has-text-centered'>
-      <div class='columns is-mobile is-centered'>
-        <div class='column is-4'>
-          <button class="button is-danger preferredbtn" id='btn'>CHOOSE YOUR FAVORITE LEAGUE</button>
+    <div class="container has-text-centered">
+      <div class="columns is-mobile is-centered">
+        <div class="column is-4">
+          <!-- Modal button -->
+          <button class="button is-danger preferredbtn" id="btn">
+            CHOOSE YOUR FAVORITE LEAGUE
+          </button>
           <div class="modal">
             <div class="modal-background"></div>
             <div class="modal-content">
-              <div class='box'>
-                <h1 class='title' style='color:rgb(0, 0, 0)'>
-                  What's your favorite league?</h1>
-                  <div class='buttons'>
-                    <button id="eng.1" class='button is-black  button is-outlined button is-fullwidth btn1'aria-label="close">
-                      English Premier League
-                    </button>
-                  </div>
-                  <div class='buttons'>
-                    <button id="fra.1"class=' button is-black button is-outlined button is-fullwidth btn2'aria-label="close">
-                      French League 1 
-                    </button>
-                  </div>
-                  <div class='buttons'>
-                    <button id="ger.1" class=' button is-black button is-outlined button is-fullwidth btn3'aria-label="close">
-                      German Bundesliga
-                    </button>
-                  </div>
-                  <div class='buttons'>
-                    <button id="ita.1" class=' button is-black button is-outlined button is-fullwidth btn4'aria-label="close">
-                      Italian Serie A 
-                    </button>
-                  </div>
-                  <div class='buttons'>
-                    <button id="por.1" class=' button is-black button is-outlined button is-fullwidth btn5' aria-label="close">
-                     Portuguese Liga 
-                    </button>
-                  </div>
-                  <div class='buttons'>
-                    <button id="spa.1" class=' button is-black button is-outlined button is-fullwidth btn6' aria-label="close">
-                      Spanish Primera Division 
-                    </button>
-                  </div>
+              <div class="box">
+                <h1 class="title" style="color: rgb(0, 0, 0)">
+                  <!-- Modal prompt -->
+                  What's your favorite league?
+                </h1>
+                <!-- Modal button choices -->
+                <div class="buttons">
+                  <button id="eng.1" class="
+                                                button
+                                                is-black
+                                                button
+                                                is-outlined
+                                                button
+                                                is-fullwidth
+                                                btn1
+                                            " aria-label="close">
+                    English Premier League
+                  </button>
+                </div>
+                <div class="buttons">
+                  <button id="fra.1" class="
+                                                button
+                                                is-black
+                                                button
+                                                is-outlined
+                                                button
+                                                is-fullwidth
+                                                btn2
+                                            " aria-label="close">
+                    French League 1
+                  </button>
+                </div>
+                <div class="buttons">
+                  <button id="ger.1" class="
+                                                button
+                                                is-black
+                                                button
+                                                is-outlined
+                                                button
+                                                is-fullwidth
+                                                btn3
+                                            " aria-label="close">
+                    German Bundesliga
+                  </button>
+                </div>
+                <div class="buttons">
+                  <button id="ita.1" class="
+                                                button
+                                                is-black
+                                                button
+                                                is-outlined
+                                                button
+                                                is-fullwidth
+                                                btn4
+                                            " aria-label="close">
+                    Italian Serie A
+                  </button>
+                </div>
+                <div class="buttons">
+                  <button id="por.1" class="
+                                                button
+                                                is-black
+                                                button
+                                                is-outlined
+                                                button
+                                                is-fullwidth
+                                                btn5
+                                            " aria-label="close">
+                    Portuguese Liga
+                  </button>
+                </div>
+                <div class="buttons">
+                  <button id="esp.1" class="
+                                                button
+                                                is-black
+                                                button
+                                                is-outlined
+                                                button
+                                                is-fullwidth
+                                                btn6
+                                            " aria-label="close">
+                    Spanish Primera Division
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="content has-text-centered">
-      <p class="footer1">
-        <strong>Soccer Fan Central </strong> by <a href="https://github.com/cheesecakeassassin/group5-football-fanpage">group5</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <!-- add touch punch here -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./assets/js/script.js"></script>
+
+    <<<<<<< HEAD <br><br>
+      <!--buttons-->
+      <ol></ol>
+      <table id="table" class="table is-hoverable is-striped">
+        <thead>
+          <tr>
+            <th><abbr title="Position">Pos</abbr></th>
+            <th>Team</th>
+            <th><abbr title="Played">Pld</abbr></th>
+            <th><abbr title="Won">W</abbr></th>
+            <th><abbr title="Drawn">D</abbr></th>
+            <th><abbr title="Lost">L</abbr></th>
+            <th><abbr title="Goals for">GF</abbr></th>
+            <th><abbr title="Goals against">GA</abbr></th>
+            <th><abbr title="Goal difference">GD</abbr></th>
+            <th><abbr title="Points">Pts</abbr></th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th><abbr title="Position">Pos</abbr></th>
+            <th>Team</th>
+            <th><abbr title="Played">Pld</abbr></th>
+            <th><abbr title="Won">W</abbr></th>
+            <th><abbr title="Drawn">D</abbr></th>
+            <th><abbr title="Lost">L</abbr></th>
+            <th><abbr title="Goals for">GF</abbr></th>
+            <th><abbr title="Goals against">GA</abbr></th>
+            <th><abbr title="Goal difference">GD</abbr></th>
+            <th><abbr title="Points">Pts</abbr></th>
+          </tr>
+        </tfoot>
+        <tbody class="table-info"></tbody>
+      </table>
+      </section>
+      </section>
+      <!--footer-->
+      <footer class="footer">
+        <div class="store1">
+          <p class="store2">Preferred Leagues:</p>
+        </div>
+        <hr>
+        <div>
+          <p class="store"></p>
+        </div>
+        <button id="clearbtn" onclick='remove()'>Clear Preferred league</button>
+        <div class='container has-text-centered'>
+          <div class='columns is-mobile is-centered'>
+            <div class='column is-4'>
+              <button class="button is-danger preferredbtn" id='btn'>CHOOSE YOUR FAVORITE LEAGUE</button>
+              <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <div class='box'>
+                    <h1 class='title' style='color:rgb(0, 0, 0)'>
+                      What's your favorite league?</h1>
+                    <div class='buttons'>
+                      <button id="eng.1" class='button is-black  button is-outlined button is-fullwidth btn1'
+                        aria-label="close">
+                        English Premier League
+                      </button>
+                    </div>
+                    <div class='buttons'>
+                      <button id="fra.1" class=' button is-black button is-outlined button is-fullwidth btn2'
+                        aria-label="close">
+                        French League 1
+                      </button>
+                    </div>
+                    <div class='buttons'>
+                      <button id="ger.1" class=' button is-black button is-outlined button is-fullwidth btn3'
+                        aria-label="close">
+                        German Bundesliga
+                      </button>
+                    </div>
+                    <div class='buttons'>
+                      <button id="ita.1" class=' button is-black button is-outlined button is-fullwidth btn4'
+                        aria-label="close">
+                        Italian Serie A
+                      </button>
+                    </div>
+                    <div class='buttons'>
+                      <button id="por.1" class=' button is-black button is-outlined button is-fullwidth btn5'
+                        aria-label="close">
+                        Portuguese Liga
+                      </button>
+                    </div>
+                    <div class='buttons'>
+                      <button id="spa.1" class=' button is-black button is-outlined button is-fullwidth btn6'
+                        aria-label="close">
+                        Spanish Primera Division
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-centered">
+          <p class="footer1">
+            <strong>Soccer Fan Central </strong> by <a
+              href="https://github.com/cheesecakeassassin/group5-football-fanpage">group5</a>. The source code is
+            licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          </p>
+        </div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <!-- add touch punch here -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="./assets/js/script.js"></script>
+
 </html>
+=======
+<div class="content has-text-centered">
+  <p class="footer1">
+    <strong>Soccer Fan Central </strong> by
+    <a href="https://jgthms.com">group5</a>. The source code is
+    licensed
+    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
+    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+  </p>
+</div>
+</footer>
+<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
+>>>>>>> 68ae7e146114dd97be92fb30313585e059619f25
