@@ -101,11 +101,11 @@ mySel.addEventListener("change", function () {
 
 function leagueSelection() {
   standingsTable.innerHTML = "";
-  
+
   standingsApi =
-  " https://api-football-standings.azharimm.site/leagues/" +
-  leagueId +
-  "/standings?season=2021&sort=asc";
+    " https://api-football-standings.azharimm.site/leagues/" +
+    leagueId +
+    "/standings?season=2021&sort=asc";
   console.log(standingsApi);
 
   fetch(standingsApi)
@@ -188,72 +188,82 @@ document.querySelector(".box").onclick = function (event) {
 };
 
 function myFunction() {
-  var listPl =document.createElement('button');
-  listPl.className="button is-black is-rounded is-outlined btns";
-  listPl.textContent= retrievedObject;
+  var listPl = document.createElement('button');
+  listPl.className = "button is-black is-rounded is-outlined btns";
+  listPl.textContent = retrievedObject;
   storage.appendChild(listPl);
 }
 
 myFunction();
 
 // Script for modal in the footer
-const modal = 
-            document.querySelector('.modal');
-    const btn = 
-            document.querySelector('#btn')
-      const close1 = 
-            document.querySelector('.btn1')
-      const close2 = 
-            document.querySelector('.btn2')
-      const close3 = 
-            document.querySelector('.btn3')
-      const close4 = 
-            document.querySelector('.btn4')
-      const close5 = 
-            document.querySelector('.btn5')
-      const close6 = 
-            document.querySelector('.btn6')
-      const close7 = 
-            document.querySelector('.btn2')  
-    
-      btn.addEventListener('click',
-                           function () {
-        modal.style.display = 'block'
-        
-      })
-      
-      close1.addEventListener('click',
-                             function () {
-        modal.style.display = 'none'
-      })
-      close2.addEventListener('click',
-                             function () {
-        modal.style.display = 'none'
-      })
-      close3.addEventListener('click',
-                             function () {
-        modal.style.display = 'none'
-      })
-      close4.addEventListener('click',
-                             function () {
-        modal.style.display = 'none'
-      })
-      close5.addEventListener('click',
-                             function () {
-        modal.style.display = 'none'
-      })
-      close6.addEventListener('click',
-                             function () {
-        modal.style.display = 'none'
-      })
-      window.addEventListener('click',
-                              function (event) {
-        if (event.target.className === 
-            'modal-background') {
-          modal.style.display = 'none'
-        }
-      })
+const modal =
+  document.querySelector('.modal');
+const btn =
+  document.querySelector('#btn')
+const close1 =
+  document.querySelector('.btn1')
+const close2 =
+  document.querySelector('.btn2')
+const close3 =
+  document.querySelector('.btn3')
+const close4 =
+  document.querySelector('.btn4')
+const close5 =
+  document.querySelector('.btn5')
+const close6 =
+  document.querySelector('.btn6')
+const close7 =
+  document.querySelector('.btn2')
 
-      ////////
-      
-      
+btn.addEventListener('click',
+  function () {
+    modal.style.display = 'block'
+
+  })
+
+close1.addEventListener('click',
+  function () {
+    modal.style.display = 'none'
+  })
+close2.addEventListener('click',
+  function () {
+    modal.style.display = 'none'
+  })
+close3.addEventListener('click',
+  function () {
+    modal.style.display = 'none'
+  })
+close4.addEventListener('click',
+  function () {
+    modal.style.display = 'none'
+  })
+close5.addEventListener('click',
+  function () {
+    modal.style.display = 'none'
+  })
+close6.addEventListener('click',
+  function () {
+    modal.style.display = 'none'
+  })
+window.addEventListener('click',
+  function (event) {
+    if (event.target.className ===
+      'modal-background') {
+      modal.style.display = 'none'
+    }
+  })
+
+////////
+
+
+
+document.querySelector("#clearbtn").onclick = function (event) {
+  
+
+  localStorage.removeItem('')
+};
+function remove() {
+  var element = document.querySelector(".btns");
+  element.remove();
+}
