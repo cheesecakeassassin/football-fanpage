@@ -110,3 +110,10 @@ footer {
         font-size: small;
     }
 }
+header{
+  background-image: url("../images/soccer.jpg");
+  background-size: cover;
+  background-position: 80%;
+  
+  
+ }
