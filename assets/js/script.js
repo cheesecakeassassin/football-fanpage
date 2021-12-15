@@ -52,11 +52,10 @@ function createYearDropdownOptions() {
 const yearDropdownSelection = yearsDropdown;
 yearDropdownSelection.addEventListener("change", function () {
     localStorage.setItem("year", this.value);
-    let val = localStorage.getItem("year");
-    if (val) yearDropdownSelection.value = val;
-
-    year = val;
-
+    year = localStorage.getItem("year");
+    if (year) {
+        yearDropdownSelection.value = year;
+    }
     leagueSelection(); // Changes standings table to reflect chosen year
 });
 
@@ -87,17 +86,15 @@ fetch(leagueApi)
 const leagueDropdownSelection = leaguesDropdown;
 leagueDropdownSelection.addEventListener("change", function () {
     localStorage.setItem("leagueId", this.value);
-    let val = localStorage.getItem("leagueId");
-    if (val) leagueDropdownSelection.value = val;
-
+    leagueId = localStorage.getItem("leagueId");
+    if (leagueId) {
+        leagueDropdownSelection.value = leagueId;
+    }
     // Keeps the league standings consistent with the "Preferred League" after refreshing
     if (leagueId != null) {
         preferredLeagueId = leagueId;
         localStorage.setItem("leagueId", preferredLeagueId);
     }
-
-    leagueId = val;
-
     leagueSelection(); // Changing standings table to reflect selected league
 });
 
