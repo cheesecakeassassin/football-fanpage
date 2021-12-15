@@ -53,6 +53,10 @@ a {
     text-align: center;
 }
 
+.columns {
+    padding: 20px;
+}
+
 .dropdowns {
     margin-top: 50px;
     text-align: center;
@@ -60,10 +64,10 @@ a {
 
 .divp {
     display: flex;
-    flex-wrap: wrap;
     align-items: stretch;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .scroll-highlights {
@@ -86,14 +90,6 @@ a {
     background-position: 100%;
 }
 
-.licensing {
-    font-size: large;
-}
-
-.columns {
-    display: flex;
-    justify-content: center;
-}
 
 .favorite-league-button {
     display: flex;
@@ -126,6 +122,11 @@ a {
 
 .footer {
     background-color: #05405614;
+}
+
+.licensing {
+    margin-top: 25px;
+    font-size: large;
 }
 
 #table {

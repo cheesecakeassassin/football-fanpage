@@ -181,8 +181,8 @@ function leagueSelection() {
 }
 
 // Highlights and scores widgets
-var highlightsWidget = document.getElementById("highlights-widget");
-var scoresWidget = document.getElementById("scores-widget");
+var highlightsWidget = document.querySelector("#highlights-widget");
+var scoresWidget = document.querySelector("#scores-widget");
 highlightsWidget.scrollTop = highlightsWidget.scrollHeight;
 scoresWidget.scrollTop = scoresWidget.scrollHeight;
 
