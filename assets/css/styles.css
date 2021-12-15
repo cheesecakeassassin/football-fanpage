@@ -49,7 +49,7 @@ a {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.euro1 {
+.leagues-image {
     text-align: center;
 }
 
@@ -66,11 +66,11 @@ a {
     justify-content: space-around;
 }
 
-.scroll1 {
+.scroll-highlights {
     margin-top: 13px;
 }
 
-.scroll2 {
+.scroll-scores {
     margin-top: 13px;
     width: 600px;
     overflow: scroll;
@@ -86,21 +86,31 @@ a {
     background-position: 100%;
 }
 
-.footer1 {
+.licensing {
     font-size: large;
 }
 
-.store1 {
+.columns {
     display: flex;
-    /* text-align: center; */
-    border-radius: 50%;
     justify-content: center;
 }
 
-.store2 {
+.favorite-league-button {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+.favorite-league-container {
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.favorite-league-text {
     color: white;
     font-size: larger;
-    margin-left: 50px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -108,10 +118,7 @@ a {
     align-content: center;
 }
 
-p.store2 {}
-
-.button.is-rounded {
-    margin-left: 50px;
+.button .is-rounded {
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
@@ -130,7 +137,6 @@ p.store2 {}
 @media screen and (max-width: 863px) {
     footer {
         text-align: center;
-        padding-right: 200px;
     }
 
     .ball {
@@ -145,16 +151,8 @@ p.store2 {}
         margin: auto;
     }
 
-    .footer1 {
+    .licensing {
         font-size: small;
-        margin-left: 120px;
-    }
-    .button.is-rounded {
-        margin-left: 100px;
-    }
-
-    .store2 {
-        margin-left: 100px;
     }
 }
 

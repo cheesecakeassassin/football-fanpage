@@ -180,13 +180,13 @@ function leagueSelection() {
         });
 }
 
-// Highlights widgets
-var objDiv1 = document.getElementById("widget1");
-var objDiv2 = document.getElementById("widget2");
-objDiv1.scrollTop = objDiv1.scrollHeight;
-objDiv2.scrollTop = objDiv2.scrollHeight;
+// Highlights and scores widgets
+var highlightsWidget = document.getElementById("highlights-widget");
+var scoresWidget = document.getElementById("scores-widget");
+highlightsWidget.scrollTop = highlightsWidget.scrollHeight;
+scoresWidget.scrollTop = scoresWidget.scrollHeight;
 
-var storage = document.querySelector(".store");
+var storage = document.querySelector(".favorite-league-button");
 var retrievedObject = localStorage.getItem("leagueName");
 
 // Function to handle selection of a team in the modal and displaying preferred team
