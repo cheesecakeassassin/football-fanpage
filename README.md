@@ -18,11 +18,8 @@ Football Fan Central was created for soccer fans all around the world to follow 
 https://cheesecakeassassin.github.io/group5-football-fanpage/
 
 ## GitHub repository 
-SSH</br>
-git@github.com:cheesecakeassassin/group5-football-fanpage.git
-
 HTTPS</br>
-https://github.com/cheesecakeassassin/group5-football-fanpage.git
+https://github.com/cheesecakeassassin/group5-football-fanpage
 
 
 ## Working page screenshots 
