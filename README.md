@@ -9,6 +9,9 @@ Football Fan Central was created for soccer fans all around the world to follow 
 * CSS
 * JavaScript
 * Bulma (CSS Framework)
+* Two Server-Side APIs
+  * Highlights: https://www.scorebat.com/video-api/
+  * Standings: https://github.com/azharimm/football-standings-api
 
 
 ## Website 
