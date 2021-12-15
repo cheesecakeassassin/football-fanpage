@@ -15,7 +15,7 @@ var yearsDropdown = document.querySelector("#years");
 
 // Variables for dynamically changing the URL of standingsApi
 var preferredLeagueId = localStorage.getItem("preferredLeague"); // Used to separately store which league is the user's favorite
-var leagueId = localStorage.getItem("leagueId");
+var leagueId = localStorage.getItem("preferredLeague"); // Keeps the league standings consistent with the "Preferred League" after refreshing
 var year = localStorage.getItem("year");
 
 // Constant to declare an array of the years users can select in the dropdown
@@ -91,11 +91,6 @@ leagueDropdownSelection.addEventListener("change", function () {
         leagueDropdownSelection.value = leagueId;
     }
     leagueSelection(); // Changing standings table to reflect selected league
-    
-    // Keeps the league standings consistent with the "Preferred League" after refreshing
-     if (preferredLeagueId != null) {
-        localStorage.setItem("leagueId", preferredLeagueId);
-    }
 });
 
 // Function that creates standings table with stats using league and year chosen by user
