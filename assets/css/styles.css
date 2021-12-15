@@ -91,19 +91,30 @@ a {
 }
 
 .store1 {
-    display: inline-block;
-
+    display: flex;
+    /* text-align: center; */
     border-radius: 50%;
+    justify-content: center;
 }
 
 .store2 {
     color: white;
     font-size: larger;
     margin-left: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
+
+p.store2 {}
 
 .button.is-rounded {
     margin-left: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
 .footer {
