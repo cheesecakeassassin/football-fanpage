@@ -90,7 +90,6 @@ a {
     background-position: 100%;
 }
 
-
 .favorite-league-button {
     display: flex;
     justify-content: space-evenly;
@@ -159,6 +158,10 @@ a {
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
+    /*
+    Removes the following elements from the table so that
+    the table shrinks properly on mobile devices
+     */
     .goals-for,
     .goals-against,
     .goal-difference {
