@@ -167,8 +167,6 @@ function leagueSelection() {
         });
 }
 
-
-
 // Function to handle selection of a team in the modal and displaying preferred team
 function modalEventHandler() {
     var listPl = document.createElement("button");
@@ -184,7 +182,7 @@ function modalEventHandler() {
         var leagueName = event.target.innerHTML;
         preferredLeagueId = event.target.id;
         leagueId = preferredLeagueId;
-        
+
         // Storing values to local storage
         localStorage.setItem("preferredLeague", preferredLeagueId);
         localStorage.setItem("leagueId", preferredLeagueId);
