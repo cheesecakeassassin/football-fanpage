@@ -35,9 +35,9 @@ a {
 
 .navbar {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     font-size: 150%;
+    justify-content: space-evenly;
 }
 
 .football-title {
