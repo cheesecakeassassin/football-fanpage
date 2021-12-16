@@ -16,27 +16,22 @@ var yearsDropdown = document.querySelector("#years");
 // Variables for dynamically changing the URL of standingsApi
 var preferredLeagueId = localStorage.getItem("preferredLeague"); // Used to separately store which league is the user's favorite
 var leagueId = localStorage.getItem("preferredLeague"); // Keeps the league standings consistent with the "Preferred League" after refreshing
+var retrievedObject = localStorage.getItem("leagueName");
 var year = localStorage.getItem("year");
 
 // Constant to declare an array of the years users can select in the dropdown
-const yearsArray = [
-    "2021",
-    "2020",
-    "2019",
-    "2018",
-    "2017",
-    "2016",
-    "2015",
-    "2014",
-    "2013",
-    "2012",
-    "2011",
-    "2010",
-    "2009",
-    "2008",
-    "2007",
-    "2006",
-];
+const yearsArray = ["2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006"];
+
+// Variable that contains the favorite league button found on the footer of the page
+var favoriteLeagueButton = document.querySelector(".favorite-league-button");
+
+// Variables holding highlights and scores widgets
+var highlightsWidget = document.querySelector("#highlights-widget");
+var scoresWidget = document.querySelector("#scores-widget");
+
+// Sets the scroll for the highlights and scores widgets
+highlightsWidget.scrollTop = highlightsWidget.scrollHeight;
+scoresWidget.scrollTop = scoresWidget.scrollHeight;
 
 // Function that creates dropdown options for the years dropdown using yearsArray
 function createYearDropdownOptions() {
@@ -172,14 +167,7 @@ function leagueSelection() {
         });
 }
 
-// Highlights and scores widgets
-var highlightsWidget = document.querySelector("#highlights-widget");
-var scoresWidget = document.querySelector("#scores-widget");
-highlightsWidget.scrollTop = highlightsWidget.scrollHeight;
-scoresWidget.scrollTop = scoresWidget.scrollHeight;
 
-var storage = document.querySelector(".favorite-league-button");
-var retrievedObject = localStorage.getItem("leagueName");
 
 // Function to handle selection of a team in the modal and displaying preferred team
 function modalEventHandler() {
@@ -189,7 +177,7 @@ function modalEventHandler() {
     // If user hasn't chosen a preferred league yet, a blank button will not show up
     if (retrievedObject != null) {
         listPl.textContent = retrievedObject;
-        storage.appendChild(listPl);
+        favoriteLeagueButton.appendChild(listPl);
     }
     // Event listener that checks which league was chosen and stores it in local storage
     document.querySelector(".box").onclick = function (event) {
@@ -203,7 +191,7 @@ function modalEventHandler() {
         localStorage.setItem("leagueName", leagueName);
 
         listPl.textContent = leagueName;
-        storage.appendChild(listPl);
+        favoriteLeagueButton.appendChild(listPl);
 
         leagueSelection(); // Changes standing table to reflect selected league
     };
