@@ -1,4 +1,4 @@
-# group5-football-fanpage
+# Football Fan Central
 
 ## Purpose
 Football Fan Central was created for soccer fans all around the world to follow their favorite league/team that was recorded throughout history.
@@ -15,10 +15,10 @@ Football Fan Central was created for soccer fans all around the world to follow 
 
 
 ## Website 
-https://cheesecakeassassin.github.io/group5-football-fanpage/
+https://cheesecakeassassin.github.io/football-fanpage/
 
 ## GitHub repository 
-https://github.com/cheesecakeassassin/group5-football-fanpage
+https://github.com/cheesecakeassassin/football-fanpage
 
 
 ## Working page screenshots 
