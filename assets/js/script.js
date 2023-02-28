@@ -135,14 +135,14 @@ function leagueSelection() {
                 // Gets the team's stats from the API and inserting them where they go
                 position.textContent = i + 1; // Gets index and adds 1 to get team's league position
                 teamName.textContent = standingsInfo[i].team.name;
-                played.textContent = standingsInfo[i].stats[3].value;
-                wins.textContent = standingsInfo[i].stats[0].value;
-                draws.textContent = standingsInfo[i].stats[2].value;
+                played.textContent = standingsInfo[i].stats[0].value;
+                wins.textContent = standingsInfo[i].stats[6].value;
+                draws.textContent = standingsInfo[i].stats[5].value;
                 losses.textContent = standingsInfo[i].stats[1].value;
                 goalsFor.textContent = standingsInfo[i].stats[4].value;
-                goalsAgainst.textContent = standingsInfo[i].stats[5].value;
-                goalDifference.textContent = standingsInfo[i].stats[9].value;
-                points.textContent = standingsInfo[i].stats[6].value;
+                goalsAgainst.textContent = standingsInfo[i].stats[3].value;
+                goalDifference.textContent = standingsInfo[i].stats[8].value;
+                points.textContent = standingsInfo[i].stats[2].value;
 
                 // Adding class name to goals for, goals against, and goal difference for shrinking table for mobile
                 goalsFor.classList.add("goals-for");
