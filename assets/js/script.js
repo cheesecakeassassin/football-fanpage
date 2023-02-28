@@ -123,7 +123,7 @@ function leagueSelection() {
                 // Creates an element on the row for each of the team's stats
                 var position = document.createElement("th");
                 var teamName = document.createElement("td");
-                var points = document.createElement("td");
+                var points = document.createElement("th");
                 var played = document.createElement("td");
                 var wins = document.createElement("td");
                 var draws = document.createElement("td");
