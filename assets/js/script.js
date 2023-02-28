@@ -152,6 +152,7 @@ function leagueSelection() {
                 // Appends team's stats to the new row
                 teamEl.appendChild(position);
                 teamEl.appendChild(teamName);
+                teamEl.appendChild(points);
                 teamEl.appendChild(played);
                 teamEl.appendChild(wins);
                 teamEl.appendChild(draws);
@@ -159,7 +160,6 @@ function leagueSelection() {
                 teamEl.appendChild(goalsFor);
                 teamEl.appendChild(goalsAgainst);
                 teamEl.appendChild(goalDifference);
-                teamEl.appendChild(points);
 
                 // Adding completed team row to the table
                 standingsTable.appendChild(teamEl);
