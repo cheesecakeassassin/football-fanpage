@@ -2,7 +2,7 @@
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
 var leagueApi = " https://api-football-standings.azharimm.dev/leagues";
 var standingsApi =
-    " https://api-football-standings.azharimm.site/leagues/" +
+    " https://api-football-standings.azharimm.dev/leagues/" +
     leagueId +
     "/standings?season=" +
     year +
