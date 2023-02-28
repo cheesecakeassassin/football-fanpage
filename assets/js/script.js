@@ -123,6 +123,7 @@ function leagueSelection() {
                 // Creates an element on the row for each of the team's stats
                 var position = document.createElement("th");
                 var teamName = document.createElement("td");
+                var points = document.createElement("td");
                 var played = document.createElement("td");
                 var wins = document.createElement("td");
                 var draws = document.createElement("td");
@@ -130,11 +131,11 @@ function leagueSelection() {
                 var goalsFor = document.createElement("td");
                 var goalsAgainst = document.createElement("td");
                 var goalDifference = document.createElement("td");
-                var points = document.createElement("td");
 
                 // Gets the team's stats from the API and inserting them where they go
                 position.textContent = i + 1; // Gets index and adds 1 to get team's league position
                 teamName.textContent = standingsInfo[i].team.name;
+                points.textContent = standingsInfo[i].stats[2].value;
                 played.textContent = standingsInfo[i].stats[0].value;
                 wins.textContent = standingsInfo[i].stats[6].value;
                 draws.textContent = standingsInfo[i].stats[5].value;
@@ -142,7 +143,6 @@ function leagueSelection() {
                 goalsFor.textContent = standingsInfo[i].stats[4].value;
                 goalsAgainst.textContent = standingsInfo[i].stats[3].value;
                 goalDifference.textContent = standingsInfo[i].stats[8].value;
-                points.textContent = standingsInfo[i].stats[2].value;
 
                 // Adding class name to goals for, goals against, and goal difference for shrinking table for mobile
                 goalsFor.classList.add("goals-for");
