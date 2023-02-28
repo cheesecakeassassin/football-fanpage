@@ -1,6 +1,6 @@
 // API variables
 var highlightsApi = "https://www.scorebat.com/video-api/v3/";
-var leagueApi = " https://api-football-standings.azharimm.site/leagues";
+var leagueApi = " https://api-football-standings.azharimm.dev/leagues";
 var standingsApi =
     " https://api-football-standings.azharimm.site/leagues/" +
     leagueId +
